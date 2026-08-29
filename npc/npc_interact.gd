@@ -8,6 +8,7 @@ var npc : NPC
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Audio.setup_button_audio(self)
 	npc = get_parent()
 	talk_button.pressed.connect(_on_talk_button_pressed)
 	cart_button.pressed.connect(_on_cart_button_pressed)

@@ -8,6 +8,11 @@ enum REVERB_TYPE {NONE, SMALL, MEDIUM, LARGE}
 @export var ui_success_audio : AudioStream
 @export var ui_error_audio : AudioStream
 
+@export var alarm : AudioStream
+@export var npc_enter : AudioStream
+@export var npc_exit : AudioStream
+@export var cash : AudioStream
+
 signal player_made_sound( pos : Vector2, magnitude : float )
 
 var current_track : int = 0
@@ -21,6 +26,8 @@ var max_audio_streams : int = 32
 @onready var music_2: AudioStreamPlayer = %Music2
 @onready var ui: AudioStreamPlayer = %UI
 
+var voices_paths : Array[String]
+
 func _ready() -> void:
 	ui.play()
 	ui_audio_player = ui.get_stream_playback()
@@ -30,11 +37,27 @@ func _ready() -> void:
 		add_child(audio_player)
 		audio_player.bus = "SFX"
 		audio_pool.append(audio_player)
+	
+	setup_voices()
 
-func setup_button_audio ( node : Node ) -> void:
-	for c in node.find_children( "*", "Button"):
+func setup_button_audio ( node : Node) -> void:
+	for c in node.find_children("*", "Button"):
 		c.pressed.connect(ui_select)
-		c.pressed.connect(ui_focus_change )
+		c.mouse_entered.connect(ui_focus_change )
+
+func setup_button_audio_helper( button : BaseButton ) -> void:
+	button.pressed.connect(ui_select)
+	button.mouse_entered.connect(ui_focus_change )
+
+func setup_voices() -> void:
+	voices_paths = [
+		"uid://c6cwh0vhgsf8g",
+		"uid://bt7wfcdqe2pjg",
+		"uid://braymiuog5a3q",
+		"uid://cmu02evla1dfs",
+		"uid://c1tp712na1mac",
+		"uid://bmct75lolwa8f"
+	]
 
 func play_music (audio : AudioStream) -> void:
 	var current_player : AudioStreamPlayer = get_music_player(current_track)

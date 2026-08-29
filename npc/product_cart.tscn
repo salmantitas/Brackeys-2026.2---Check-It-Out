@@ -657,7 +657,7 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(961, 543)
 texture = ExtResource("2_okab3")
 
-[node name="CancelButton" type="TextureButton" parent="." unique_id=800551350]
+[node name="CancelButton" type="TextureButton" parent="." unique_id=800551350 groups=["Buttons"]]
 offset_left = 297.0
 offset_top = 17.0
 offset_right = 505.0

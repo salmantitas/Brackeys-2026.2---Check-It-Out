@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://bhj7124n1rb5h"]
 
 [ext_resource type="Script" uid="uid://c6w5ownwlodvh" path="res://00_globals/audio/audio.gd" id="1_w2lg2"]
+[ext_resource type="AudioStream" uid="uid://dq2qkb3qr6iai" path="res://assets/audio/ui/hover.wav" id="2_0cah7"]
+[ext_resource type="AudioStream" uid="uid://ceyn54jsg0ajk" path="res://assets/audio/sfx/alarm.wav" id="2_ong6s"]
+[ext_resource type="AudioStream" uid="uid://cm5tqvsea231d" path="res://assets/audio/ui/click.wav" id="3_b2ro7"]
+[ext_resource type="AudioStream" uid="uid://6hywo3xw1bmt" path="res://assets/audio/sfx/npc_enter.wav" id="3_cexs3"]
+[ext_resource type="AudioStream" uid="uid://c3t6s1pxcybfc" path="res://assets/audio/sfx/npc_exit.wav" id="4_p0bh7"]
+[ext_resource type="AudioStream" uid="uid://4w6seexpnvt4" path="res://assets/audio/sfx/cash.wav" id="5_p0bh7"]
 
 [sub_resource type="AudioStreamPolyphonic" id="AudioStreamPolyphonic_ryppq"]
 polyphony = 16
@@ -8,6 +14,12 @@ polyphony = 16
 [node name="Audio" type="Node" unique_id=992724815]
 process_mode = 3
 script = ExtResource("1_w2lg2")
+ui_focus_audio = ExtResource("2_0cah7")
+ui_select_audio = ExtResource("3_b2ro7")
+alarm = ExtResource("2_ong6s")
+npc_enter = ExtResource("3_cexs3")
+npc_exit = ExtResource("4_p0bh7")
+cash = ExtResource("5_p0bh7")
 
 [node name="Music1" type="AudioStreamPlayer" parent="." unique_id=1643487848]
 unique_name_in_owner = true

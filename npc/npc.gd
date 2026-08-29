@@ -14,13 +14,12 @@ var assisted : bool = false
 var checkout_complete : bool = false
 
 @onready var speechbox: Control = $Speechbox
-
 @export var browser : bool = false
-
 @onready var sprite_2d: Sprite2D = $Sprite2D
-
 @export var steal_chance : float = 0.0
 var enraged : float = 0.0
+
+@export var product_pick_interval : float = 1
 
 #region /// States
 var state_machine : StateMachine
@@ -29,16 +28,18 @@ var blackboard : Blackboard
 #endregion
 
 @onready var state_label: Label = %StateLabel
-
 @onready var interact: Control = $Interact
 @onready var product_cart: CanvasLayer = $ProductCart
 @onready var stolen_cart: CanvasLayer = $StolenCart
 @onready var progress_bar: ProgressBar = $Stats/RemainingTime/ProgressBar
 
+var voice_audio : AudioStream
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	setup()
 	randomize_appearance()
+	randomize_voice()
 	
 	shopping_list = Inventory.new()
 	generate_shopping_list()
@@ -84,6 +85,10 @@ func randomize_appearance() -> void:
 	sprite_2d.texture = ref_sprite.texture
 	sprite_2d.position = ref_sprite.position
 	sprite_2d.scale = ref_sprite.scale
+
+func randomize_voice() -> void:
+	var index : int = randi_range(0, Audio.voices_paths.size() - 1)
+	voice_audio = load(Audio.voices_paths[index])
 
 func _on_area_2d_mouse_entered() -> void:
 	var new_scale : float = 1.1
@@ -144,6 +149,9 @@ func buy_products() -> void:
 	checkout_complete = true
 
 func check_bags() -> void:
+	if products_stolen.size() > 0:
+		Audio.play_spatial_sound(Audio.alarm, Vector2.ZERO)
+	
 	for product_id in products_stolen:
 		StoreManager.return_product(product_id)
 	products_cart = []

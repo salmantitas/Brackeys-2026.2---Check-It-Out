@@ -30,8 +30,9 @@ var total_stock : int = 00
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#SceneManager.game_started.connect(start_new_day)
+	SceneManager.game_started.connect(start_new_day)
 	start_new_day()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

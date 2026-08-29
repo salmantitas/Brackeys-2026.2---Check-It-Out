@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _update_till(time : float = 1) -> void:
+	Audio.play_spatial_sound(Audio.cash, Vector2.ZERO)
 	game_counter_till.hide()
 	game_counter_checkout.show()
 	await get_tree().create_timer(1.0).timeout

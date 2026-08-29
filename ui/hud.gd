@@ -18,6 +18,8 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Audio.setup_button_audio_helper(pause_button)
+	
 	StoreManager.sold_products.connect(_update_HUD)
 	StoreManager.stock_changed.connect(_update_stock_count)
 	$PauseMenu.hide()
@@ -27,6 +29,8 @@ func _ready() -> void:
 	
 	SignalBus.inspection_started.connect(_on_inspection_started)
 	SignalBus.inspection_ended.connect(_on_inspection_ended)
+	
+	_on_pause_button_pressed()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -71,3 +75,6 @@ func _on_inspection_started() -> void:
 
 func _on_inspection_ended() -> void:
 	pause.show()
+
+func _on_title_button_pressed() -> void:
+	SceneManager.return_to_title()

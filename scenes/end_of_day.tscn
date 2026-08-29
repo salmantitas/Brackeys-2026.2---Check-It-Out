@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dgc7ajj32mr2g" path="res://assets/art/eod_shutter.webp" id="4_bv4ln"]
 [ext_resource type="FontFile" uid="uid://j4l5vqoxurd0" path="res://assets/font/font_MerchantCopy-GOXq.ttf" id="4_qk3j7"]
 [ext_resource type="Texture2D" uid="uid://dyeorr5xdnlm" path="res://assets/art/eod_fired.webp" id="5_qns34"]
+[ext_resource type="FontFile" uid="uid://g5q7vwtxaqnw" path="res://assets/font/font_BRLNSDB.TTF" id="7_63ts4"]
+[ext_resource type="Texture2D" uid="uid://dovj45c0o1blc" path="res://assets/art/hud_button.webp" id="8_7hok6"]
 
 [sub_resource type="Animation" id="Animation_tddlx"]
 length = 0.001
@@ -93,10 +95,10 @@ tracks/0/path = NodePath("Control/EodShutter:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(3, 0.1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(3, 1),
 "update": 0,
-"values": [Vector2(960, -544), Vector2(960, 543)]
+"values": [Vector2(966, -544), Vector2(966, 543)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -108,7 +110,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0.5, 0.7, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 1616), Vector2(0, 0), Vector2(0, 0)]
+"values": [Vector2(0, 1616), Vector2(0, -55), Vector2(0, -55)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -171,6 +173,12 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_tddlx"]
 gradient = SubResource("Gradient_bv4ln")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7hok6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lk6no"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aldda"]
+
 [node name="EndOfDay" type="CanvasLayer" unique_id=1983696688]
 script = ExtResource("1_18edc")
 
@@ -204,7 +212,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = 0.0012207031
+offset_bottom = 0.0017089844
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -384,6 +392,27 @@ text = "4.00"
 horizontal_alignment = 2
 vertical_alignment = 1
 
+[node name="StatusLabel" type="Label" parent="Control/Payslip" unique_id=864580349]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 207.0
+offset_top = 209.99902
+offset_right = -199.0
+offset_bottom = 372.99902
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.6911139, 2.4787337e-06, 4.813075e-07, 1)
+theme_override_fonts/font = ExtResource("7_63ts4")
+theme_override_font_sizes/font_size = 64
+text = "You Could Not Meet The Sales Goal And You Lost Too Many Products."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=283768352]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
@@ -392,24 +421,70 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -276.0
-offset_top = 287.0
-offset_right = 327.0
-offset_bottom = 965.0
+offset_left = -139.0
+offset_top = 332.0
+offset_right = 213.0
+offset_bottom = 524.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 10
 
 [node name="ContinueButton" type="Button" parent="Control/VBoxContainer" unique_id=2040689467]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.31014192, 3.4593978e-07, 1.5642495e-07, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_63ts4")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7hok6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lk6no")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_aldda")
 text = "CONTINUE"
+
+[node name="HudButton" type="Sprite2D" parent="Control/VBoxContainer/ContinueButton" unique_id=1594194415]
+z_index = -1
+position = Vector2(176, 32)
+scale = Vector2(0.27, 0.2844036)
+texture = ExtResource("8_7hok6")
 
 [node name="RestartButton" type="Button" parent="Control/VBoxContainer" unique_id=2082892219]
 unique_name_in_owner = true
+z_index = 1
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.31014192, 3.4593978e-07, 1.5642495e-07, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_63ts4")
 theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7hok6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lk6no")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_aldda")
 text = "RESTART"
+
+[node name="HudButton" type="Sprite2D" parent="Control/VBoxContainer/RestartButton" unique_id=407228258]
+z_index = -1
+position = Vector2(176, 32)
+scale = Vector2(0.27, 0.2844036)
+texture = ExtResource("8_7hok6")
+
+[node name="TitleButton" type="Button" parent="Control/VBoxContainer" unique_id=715461834]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.31014192, 3.4593978e-07, 1.5642495e-07, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_63ts4")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_7hok6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lk6no")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_aldda")
+text = "BACK TO TITLE"
+
+[node name="HudButton" type="Sprite2D" parent="Control/VBoxContainer/TitleButton" unique_id=339854772]
+z_index = -1
+position = Vector2(176, 32)
+scale = Vector2(0.27, 0.2844036)
+texture = ExtResource("8_7hok6")
 
 [node name="MusicAutoTrigger" type="Node" parent="." unique_id=1961004425]
 script = ExtResource("2_56bvd")
@@ -418,3 +493,4 @@ metadata/_custom_type_script = "uid://b6xnvefhcot7f"
 
 [connection signal="pressed" from="Control/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
 [connection signal="pressed" from="Control/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/TitleButton" to="." method="_on_title_button_pressed"]

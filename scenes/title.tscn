@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://blif0poth6hrf"]
 
 [ext_resource type="Script" uid="uid://b6xnvefhcot7f" path="res://music_auto_trigger.gd" id="1_4ignj"]
+[ext_resource type="Script" uid="uid://qv87dc44jbey" path="res://scenes/title.gd" id="1_b3w7a"]
 [ext_resource type="Texture2D" uid="uid://n8uc1ihxg803" path="res://assets/art/menu.webp" id="1_p6dhs"]
 [ext_resource type="Texture2D" uid="uid://c7j6l0mwdulid" path="res://assets/art/menu_button.webp" id="2_pyl7j"]
 [ext_resource type="AudioStream" uid="uid://7qcvmh5nhr1e" path="res://assets/audio/music/main_menu_grocery_jam.wav" id="2_wosw1"]
@@ -22,7 +23,7 @@ var new_scene : String = \"uid://c185ubicquv1j\"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Audio.setup_button_audio_helper(self)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -133,6 +134,7 @@ _data = {
 }
 
 [node name="Title" type="CanvasLayer" unique_id=728338518]
+script = ExtResource("1_b3w7a")
 
 [node name="Control" type="Control" parent="." unique_id=1218785203]
 layout_mode = 3
@@ -162,7 +164,7 @@ offset_top = 529.0
 offset_right = 1192.0
 offset_bottom = 593.0
 
-[node name="TextureButton" type="TextureButton" parent="Control/Control" unique_id=800276863]
+[node name="TextureButton" type="TextureButton" parent="Control/Control" unique_id=800276863 groups=["Buttons"]]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

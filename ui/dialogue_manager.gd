@@ -25,6 +25,7 @@ func _on_conversation_started(npc : NPC) -> void:
 	#responses.size_flags_horizontal = Control.SIZE_FILL
 
 func set_dialogue(dialogue : Dialogue) -> void:
+	Audio.play_spatial_sound(current_npc.voice_audio, current_npc.global_position)
 	current_dialogue = dialogue
 	current_dialogue.visit_count += 1
 	execute_dialogue()
@@ -47,6 +48,7 @@ func set_dialogue(dialogue : Dialogue) -> void:
 			button.add_theme_color_override("font_color", Color())
 			button.add_theme_stylebox_override("normal", StyleBoxEmpty.new())
 			button.add_theme_font_size_override("font_size", 32)
+			Audio.setup_button_audio_helper(button)
 			responses.add_child(button)
 		
 			button.pressed.connect(_on_dialogue_selected.bind(option))
@@ -115,9 +117,10 @@ func execute_dialogue() -> void:
 		current_npc.buy_products()
 	
 	if current_dialogue.executible == Dialogue.Function.ACCUSED:
+		current_npc.product_pick_interval *= 2
 		if current_npc.products_stolen.size() > 0:
 			var dlg : Dialogue = current_dialogue.get_child(0)
-			dlg.line = "Stolen products were discovered. The shoplifter is being kicked out."
+			dlg.line = "What!!! How did these show up in my bag?"
 		pass
 	
 	if current_dialogue.executible == Dialogue.Function.BAG_CHECK:

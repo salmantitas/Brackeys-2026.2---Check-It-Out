@@ -37,6 +37,12 @@ height = 1080
 fill_from = Vector2(0.5, 1)
 fill_to = Vector2(0.5, 0)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x3e77"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_exqf6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3ju8l"]
+
 [sub_resource type="Animation" id="Animation_kc1f2"]
 length = 0.001
 tracks/0/type = "value"
@@ -428,7 +434,7 @@ position = Vector2(925, 47)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("15_xtm2r")
 
-[node name="PauseButton" type="Button" parent="Top/Pause" unique_id=1488528685]
+[node name="PauseButton" type="Button" parent="Top/Pause" unique_id=1488528685 groups=["Buttons"]]
 unique_name_in_owner = true
 process_mode = 3
 offset_left = -663.3333
@@ -572,7 +578,49 @@ offset_bottom = 1080.0
 mouse_filter = 2
 texture = SubResource("GradientTexture2D_kc1f2")
 
+[node name="HudButton" type="Sprite2D" parent="PauseMenu/TextureRect" unique_id=1271809977]
+position = Vector2(1005.00006, 521)
+texture = ExtResource("15_xtm2r")
+
+[node name="Label" type="Label" parent="PauseMenu/TextureRect/HudButton" unique_id=997504955]
+offset_left = -577.00006
+offset_top = -84.0
+offset_right = 584.99994
+offset_bottom = 68.0
+theme_override_fonts/font = ExtResource("16_kc1f2")
+theme_override_font_sizes/font_size = 24
+text = "GOALS:
+1. Attend to customers and sell products
+2. Catch anyone who tries to steal our products
+3. If you lose more than you sell... YOU'RE FIRED
+- Clive"
+
+[node name="TitleButton" type="Button" parent="PauseMenu/TextureRect" unique_id=699994870]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = 786.0
+offset_top = 735.0
+offset_right = 1114.0
+offset_bottom = 790.0
+theme_override_colors/font_pressed_color = Color(0.31014192, 3.4593978e-07, 1.5642495e-07, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("16_kc1f2")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_x3e77")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_exqf6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3ju8l")
+text = "BACK TO TITLE"
+
+[node name="HudButton" type="Sprite2D" parent="PauseMenu/TextureRect/TitleButton" unique_id=589256789]
+z_index = -1
+position = Vector2(162, 32)
+scale = Vector2(0.27, 0.2844036)
+texture = ExtResource("15_xtm2r")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PauseMenu" unique_id=1137815190]
 libraries/ = SubResource("AnimationLibrary_kc1f2")
 
+[connection signal="mouse_entered" from="Top/Pause/PauseButton" to="." method="_on_pause_button_mouse_entered"]
 [connection signal="pressed" from="Top/Pause/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="PauseMenu/TextureRect/TitleButton" to="." method="_on_title_button_pressed"]

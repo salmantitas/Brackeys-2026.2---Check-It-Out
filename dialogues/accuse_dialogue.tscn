@@ -23,7 +23,7 @@ metadata/_custom_type_script = "uid://qc62aas86b67"
 [node name="Dialogue2" type="Node" parent="." unique_id=824162993]
 script = ExtResource("1_wvobn")
 current_dialogue = "Back Off"
-line = "That's what I thought"
+line = "I know where I won't be buying from..."
 metadata/_custom_type_script = "uid://qc62aas86b67"
 
 [node name="CancelDialogue" parent="Dialogue2" unique_id=2018624737 instance=ExtResource("2_f707y")]

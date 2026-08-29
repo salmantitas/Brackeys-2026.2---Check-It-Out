@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://di2gow7ddd7uk" path="res://cutscenes/cutscene.gd" id="1_7kd3d"]
 [ext_resource type="FontFile" uid="uid://g5q7vwtxaqnw" path="res://assets/font/font_BRLNSDB.TTF" id="1_edmg7"]
+[ext_resource type="Texture2D" uid="uid://dovj45c0o1blc" path="res://assets/art/hud_button.webp" id="3_2pbgo"]
 
 [sub_resource type="Animation" id="Animation_a320b"]
 length = 0.001
@@ -70,6 +71,12 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_bb0yx"]
 gradient = SubResource("Gradient_2pbgo")
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ddl0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dtrb2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_528a0"]
+
 [node name="Cutscene_1" type="Node2D" unique_id=518741892]
 script = ExtResource("1_7kd3d")
 next_scene = "uid://bapi5wv61w68x"
@@ -135,3 +142,25 @@ theme_override_font_sizes/font_size = 48
 text = "Press Any Button to Skip"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SkipButton" type="Button" parent="Control/Label3" unique_id=1126711244]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = 520.0
+offset_right = 617.0
+offset_bottom = 55.0
+theme_override_colors/font_pressed_color = Color(0.31014192, 3.4593978e-07, 1.5642495e-07, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_edmg7")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_1ddl0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_dtrb2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_528a0")
+text = "SKIP"
+
+[node name="HudButton" type="Sprite2D" parent="Control/Label3/SkipButton" unique_id=1475256574]
+z_index = -1
+position = Vector2(48.859985, 29.000015)
+scale = Vector2(0.07852409, 0.2568808)
+texture = ExtResource("3_2pbgo")

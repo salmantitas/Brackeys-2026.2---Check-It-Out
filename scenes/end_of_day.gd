@@ -16,9 +16,15 @@ extends CanvasLayer
 
 var game_scene : String = "uid://c185ubicquv1j"
 
+@onready var continue_button: Button = %ContinueButton
+@onready var restart_button: Button = %RestartButton
+@onready var status_label: Label = %StatusLabel
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GameData.update_day(DayNightCycleManager.current_day)
+	
+	Audio.setup_button_audio(self)
 	
 	$Control/EodShutter.hide()
 	$Control/Payslip.hide()
@@ -38,7 +44,7 @@ func _ready() -> void:
 	salary_label.text = "%.2f" % (StoreManager.sales - StoreManager.product_lost)
 	net_pay_label.text = salary_label.text
 	
-	var str : String = determine_status()
+	status_label.text = determine_status()
 	
 	animation_player.play("new_animation")
 	
@@ -58,44 +64,38 @@ func determine_status() -> String:
 	
 	if (StoreManager.sales == 0):
 		status = (
-			"You Were Fired
-			For Not Being Able To Sell Anything!")
+			"You Couldn't Sell A Single Product!")
 		won = false
 	
 	elif (StoreManager.sales < sales_goal) and (StoreManager.product_lost > loss_goal):
 		status = (
-			"You Were Fired.
-			Not Only Did You Not Meet The Sales Goal...
-			You Also Lost Too Many Products")
+			"You Could Not Meet The Sales Goal And You Lost Too Many Products.")
 		won = false
 	
 	elif StoreManager.sales < sales_goal:
 		status = (
-			"You Were Fired
-			For Not Meeting The Sales Goal")
+			"You Could Not Meet The Sales Goal.")
 		won = false
 		
 	elif StoreManager.product_lost > loss_goal:
 		status = (
-			"You Were Fired
-			For Losing Too Many Products")
+			"You Lost Too Too Many Products.")
 		won = false
 		
 	elif StoreManager.product_lost >= StoreManager.sales:
 		status = (
-			"You Were Fired
-			For Losing Too Many Products")
+			"You Lost More Products Than You Could Sell.")
 		won = false
 		
 	if not won:
-		%EodFired.hide()
-		%ContinueButton.hide()
-		%RestartButton.show()
+		%EodFired.show()
+		continue_button.hide()
+		restart_button.show()
 		game_over()
 	else:
-		%EodFired.show()
-		%ContinueButton.show()
-		%RestartButton.hide()
+		%EodFired.hide()
+		continue_button.show()
+		restart_button.hide()
 	return status
 
 
@@ -107,3 +107,7 @@ func _on_restart_button_pressed() -> void:
 
 func game_over() -> void:
 	GameData.game_over()
+
+
+func _on_title_button_pressed() -> void:
+	SceneManager.return_to_title()

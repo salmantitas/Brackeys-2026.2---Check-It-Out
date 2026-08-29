@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dhipwhcgv0njo" path="res://assets/art/hud_npc_textbox.webp" id="6_eng6q"]
 [ext_resource type="AudioStream" uid="uid://txdr427xskld" path="res://assets/audio/music/gameplay_music_apple_rush.wav" id="6_jgxny"]
 [ext_resource type="FontFile" uid="uid://g5q7vwtxaqnw" path="res://assets/font/font_BRLNSDB.TTF" id="7_clus7"]
+[ext_resource type="Texture2D" uid="uid://dovj45c0o1blc" path="res://assets/art/hud_button.webp" id="9_858h0"]
 
 [sub_resource type="Animation" id="Animation_eng6q"]
 length = 0.001
@@ -238,6 +239,12 @@ _data = {
 &"cutscene": SubResource("Animation_4kkgw")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkp7t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gxkc4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h6ccp"]
+
 [node name="Cutscene2" type="Node2D" unique_id=1634610352]
 script = ExtResource("1_r7xkd")
 next_scene = "uid://c185ubicquv1j"
@@ -350,3 +357,25 @@ theme_override_font_sizes/font_size = 48
 text = "Press Any Button to Skip"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="SkipButton" type="Button" parent="Control/Label3" unique_id=1593549778]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = 520.0
+offset_right = 617.0
+offset_bottom = 55.0
+theme_override_colors/font_pressed_color = Color(0.31014192, 3.4593978e-07, 1.5642495e-07, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_clus7")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jkp7t")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_gxkc4")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_h6ccp")
+text = "SKIP"
+
+[node name="HudButton" type="Sprite2D" parent="Control/Label3/SkipButton" unique_id=429772743]
+z_index = -1
+position = Vector2(48.859985, 29.000015)
+scale = Vector2(0.07852409, 0.2568808)
+texture = ExtResource("9_858h0")

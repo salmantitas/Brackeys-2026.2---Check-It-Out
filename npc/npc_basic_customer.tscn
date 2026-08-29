@@ -104,12 +104,11 @@ state_timer_max = 10.0
 
 [node name="TotalTimer" type="Timer" parent="StateMachine/Leaving" unique_id=847682575]
 
-[node name="Interact" parent="." unique_id=154432105 node_paths=PackedStringArray("npc") instance=ExtResource("9_0ahf4")]
+[node name="Interact" parent="." unique_id=154432105 instance=ExtResource("9_0ahf4")]
 offset_left = -176.0
 offset_top = -532.0
 offset_right = 57.0
 offset_bottom = -274.0
-npc = NodePath("..")
 
 [node name="Stats" type="Control" parent="." unique_id=126685864]
 material = SubResource("CanvasItemMaterial_20prf")

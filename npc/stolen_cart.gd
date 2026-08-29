@@ -13,6 +13,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Audio.setup_button_audio(self)
 	cancel_button.pressed.connect(_on_cancel)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

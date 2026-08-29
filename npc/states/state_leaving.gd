@@ -31,6 +31,7 @@ func _on_total_timer_timeout() -> void:
 	SignalBus.position_cleared.emit( npc.global_position.x)
 	SignalBus.npc_left.emit(npc)
 	StoreManager.steal_products(npc.products_stolen)
+	Audio.play_spatial_sound(Audio.npc_exit, Vector2.ZERO)
 	npc.queue_free()
 
 func leave_immediately() -> void:
