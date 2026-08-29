@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bkhy65on3mfmj"]
+
+[ext_resource type="Script" uid="uid://droiil0yiks3f" path="res://npc/npc_interact.gd" id="1_n5fl8"]
+[ext_resource type="Texture2D" uid="uid://o7dpuf07yrpi" path="res://assets/art/npc_interact_buttons.webp" id="1_o1odp"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_20prf"]
+light_mode = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o1odp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n5fl8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7f7r"]
+
+[node name="Interact" type="Control" unique_id=154432105]
+material = SubResource("CanvasItemMaterial_20prf")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1535.0
+offset_bottom = -896.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_n5fl8")
+
+[node name="NpcInteractButtons" type="Sprite2D" parent="." unique_id=1574436425]
+position = Vector2(192, 92)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_o1odp")
+
+[node name="TalkButton" type="Button" parent="." unique_id=1736714290]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 74.0
+offset_top = 7.0
+offset_right = 313.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.3529412, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o1odp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n5fl8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u7f7r")
+text = "TALK"
+
+[node name="CartButton" type="Button" parent="." unique_id=1163742079]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 45.0
+offset_top = 50.0
+offset_right = 342.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.3529412, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o1odp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n5fl8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u7f7r")
+text = "PEEK AT CART"
+
+[node name="ShopliftButton" type="Button" parent="." unique_id=594116273]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 10.0
+offset_top = 98.0
+offset_right = 372.0
+offset_bottom = 150.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.3529412, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o1odp")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_n5fl8")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_u7f7r")
+text = "INSPECT FOR SHOPLIFTING"

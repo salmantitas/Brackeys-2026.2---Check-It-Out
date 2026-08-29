@@ -1,0 +1,187 @@
+[gd_scene format=3 uid="uid://blif0poth6hrf"]
+
+[ext_resource type="Script" uid="uid://b6xnvefhcot7f" path="res://music_auto_trigger.gd" id="1_4ignj"]
+[ext_resource type="Texture2D" uid="uid://n8uc1ihxg803" path="res://assets/art/menu.webp" id="1_p6dhs"]
+[ext_resource type="Texture2D" uid="uid://c7j6l0mwdulid" path="res://assets/art/menu_button.webp" id="2_pyl7j"]
+[ext_resource type="AudioStream" uid="uid://7qcvmh5nhr1e" path="res://assets/audio/music/main_menu_grocery_jam.wav" id="2_wosw1"]
+
+[sub_resource type="Gradient" id="Gradient_b3w7a"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4rr2b"]
+gradient = SubResource("Gradient_b3w7a")
+width = 128
+
+[sub_resource type="GDScript" id="GDScript_yql1r"]
+script/source = "extends TextureButton
+
+const cutscene_path = \"uid://e047gerl1e4f\"
+
+var new_scene : String = \"uid://c185ubicquv1j\"
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func _on_pressed() -> void:
+	SceneManager.load_scene(cutscene_path)
+
+
+func _on_mouse_entered() -> void:
+	animation_player.play(\"hover_start\")
+
+
+func _on_mouse_exited() -> void:
+	animation_player.play(\"hover_end\")
+"
+
+[sub_resource type="Animation" id="Animation_4rr2b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(135, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_pyl7j"]
+resource_name = "hover_end"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(123, -8), Vector2(135, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.6, 0.6), Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_b3w7a"]
+resource_name = "hover_start"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(135, 0), Vector2(123, -8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(0.6, 0.6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4rr2b"]
+_data = {
+&"RESET": SubResource("Animation_4rr2b"),
+&"hover_end": SubResource("Animation_pyl7j"),
+&"hover_start": SubResource("Animation_b3w7a")
+}
+
+[node name="Title" type="CanvasLayer" unique_id=728338518]
+
+[node name="Control" type="Control" parent="." unique_id=1218785203]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CheckitoutMenu" type="Sprite2D" parent="Control" unique_id=1925878311]
+position = Vector2(972.00006, 544)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_p6dhs")
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=652611313]
+layout_mode = 0
+offset_left = 911.0
+offset_top = 532.0
+offset_right = 1039.0
+offset_bottom = 586.0
+texture = SubResource("GradientTexture1D_4rr2b")
+
+[node name="Control" type="Control" parent="Control" unique_id=1474510942]
+anchors_preset = 0
+offset_left = 766.0
+offset_top = 529.0
+offset_right = 1192.0
+offset_bottom = 593.0
+
+[node name="TextureButton" type="TextureButton" parent="Control/Control" unique_id=800276863]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -291.0
+offset_bottom = 150.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_pyl7j")
+script = SubResource("GDScript_yql1r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/Control/TextureButton" unique_id=479311078]
+libraries/ = SubResource("AnimationLibrary_4rr2b")
+
+[node name="MusicAutoTrigger" type="Node" parent="." unique_id=598191868]
+script = ExtResource("1_4ignj")
+track = ExtResource("2_wosw1")
+metadata/_custom_type_script = "uid://b6xnvefhcot7f"
+
+[connection signal="mouse_entered" from="Control/Control/TextureButton" to="Control/Control/TextureButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Control/TextureButton" to="Control/Control/TextureButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="Control/Control/TextureButton" to="Control/Control/TextureButton" method="_on_pressed"]

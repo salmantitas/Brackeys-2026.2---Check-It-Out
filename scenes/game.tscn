@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://c185ubicquv1j"]
+
+[ext_resource type="Texture2D" uid="uid://c3u3sio5boia1" path="res://assets/art/game_bg.webp" id="1_p57ef"]
+[ext_resource type="PackedScene" uid="uid://c7ho1kk1omgp5" path="res://ui/hud.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://dlermelsf5cg4" path="res://components/customer_spawner.tscn" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://v2ddpjnjqq5m" path="res://components/day_night_cycle_component.tscn" id="3_lnu2h"]
+[ext_resource type="Script" uid="uid://b6xnvefhcot7f" path="res://music_auto_trigger.gd" id="4_lbhrr"]
+[ext_resource type="AudioStream" uid="uid://txdr427xskld" path="res://assets/audio/music/gameplay_music_apple_rush.wav" id="5_iywne"]
+[ext_resource type="PackedScene" uid="uid://c3tbkindo7ih8" path="res://backgrounds/game_counter.tscn" id="7_u5sy4"]
+
+[sub_resource type="Gradient" id="Gradient_8cj0n"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uwrxv"]
+gradient = SubResource("Gradient_8cj0n")
+
+[node name="Game" type="Node2D" unique_id=1634610352]
+
+[node name="Background" type="TextureRect" parent="." unique_id=2096426457]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("GradientTexture2D_uwrxv")
+
+[node name="GameBg" type="Sprite2D" parent="." unique_id=689617945]
+position = Vector2(967, 543)
+texture = ExtResource("1_p57ef")
+
+[node name="HUD" parent="." unique_id=768290066 instance=ExtResource("1_uwrxv")]
+
+[node name="CustomerSpawner" parent="." unique_id=1312482105 instance=ExtResource("2_yqjtg")]
+
+[node name="DayNightCycleComponent" parent="." unique_id=1941494293 instance=ExtResource("3_lnu2h")]
+visible = false
+initial_hour = 7
+initial_minute = 0
+
+[node name="MusicAutoTrigger" type="Node" parent="." unique_id=1595456313]
+script = ExtResource("4_lbhrr")
+track = ExtResource("5_iywne")
+metadata/_custom_type_script = "uid://b6xnvefhcot7f"
+
+[node name="GameCounter" parent="." unique_id=2037230404 instance=ExtResource("7_u5sy4")]
+position = Vector2(968, 541)

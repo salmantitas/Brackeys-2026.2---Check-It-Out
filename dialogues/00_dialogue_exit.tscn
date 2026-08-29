@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c0n3408koex5h"]
+
+[ext_resource type="Script" uid="uid://qc62aas86b67" path="res://dialogues/dialogue.gd" id="1_66ojd"]
+
+[node name="CancelDialogue" type="Node" unique_id=391777944]
+script = ExtResource("1_66ojd")
+current_dialogue = "Exit"
+executible = 6
+metadata/_custom_type_script = "uid://qc62aas86b67"

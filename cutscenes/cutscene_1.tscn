@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://e047gerl1e4f"]
+
+[ext_resource type="Script" uid="uid://di2gow7ddd7uk" path="res://cutscenes/cutscene.gd" id="1_7kd3d"]
+[ext_resource type="FontFile" uid="uid://g5q7vwtxaqnw" path="res://assets/font/font_BRLNSDB.TTF" id="1_edmg7"]
+
+[sub_resource type="Animation" id="Animation_a320b"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Label:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Label2:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0sipp"]
+resource_name = "cutscene"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Label:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Label2:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.25, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2bm7f"]
+_data = {
+&"RESET": SubResource("Animation_a320b"),
+&"cutscene": SubResource("Animation_0sipp")
+}
+
+[sub_resource type="Gradient" id="Gradient_2pbgo"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bb0yx"]
+gradient = SubResource("Gradient_2pbgo")
+
+[node name="Cutscene_1" type="Node2D" unique_id=518741892]
+script = ExtResource("1_7kd3d")
+next_scene = "uid://bapi5wv61w68x"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=294904750]
+libraries/ = SubResource("AnimationLibrary_2bm7f")
+
+[node name="Control" type="Control" parent="." unique_id=297224074]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1252511840]
+layout_mode = 1
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("GradientTexture1D_bb0yx")
+
+[node name="Label" type="Label" parent="Control" unique_id=1594871340]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_edmg7")
+theme_override_font_sizes/font_size = 48
+text = "I never quite saw myself working at S-MART..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Control" unique_id=2037649135]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_fonts/font = ExtResource("1_edmg7")
+theme_override_font_sizes/font_size = 48
+text = "But when times are desperate, you have to take what you get"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Control" unique_id=2074851727]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -349.0
+offset_top = -114.0
+offset_right = 349.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.13174233, 0.13174233, 0.13174233, 1)
+theme_override_fonts/font = ExtResource("1_edmg7")
+theme_override_font_sizes/font_size = 48
+text = "Press Any Button to Skip"
+horizontal_alignment = 1
+vertical_alignment = 1

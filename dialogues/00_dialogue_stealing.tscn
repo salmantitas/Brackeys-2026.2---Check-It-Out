@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dst010afwcv6j"]
+
+[ext_resource type="Script" uid="uid://qc62aas86b67" path="res://dialogues/dialogue.gd" id="1_dneui"]
+[ext_resource type="PackedScene" uid="uid://c0n3408koex5h" path="res://dialogues/00_dialogue_exit.tscn" id="2_ja6b5"]
+[ext_resource type="PackedScene" uid="uid://dn0v3e7macvlu" path="res://dialogues/accuse_dialogue.tscn" id="3_j8rkw"]
+
+[node name="00StealingDialogue" type="Node" unique_id=939059488]
+script = ExtResource("1_dneui")
+metadata/_custom_type_script = "uid://qc62aas86b67"
+
+[node name="AssistDialogue" type="Node" parent="." unique_id=405368990]
+script = ExtResource("1_dneui")
+current_dialogue = "Offer to Assist Customer"
+line = "No, leave me alone!"
+max_visit_count = 1
+metadata/_custom_type_script = "uid://qc62aas86b67"
+
+[node name="CancelDialogue" parent="AssistDialogue" unique_id=391777944 instance=ExtResource("2_ja6b5")]
+
+[node name="AccuseDialogue" parent="." unique_id=1000084984 instance=ExtResource("3_j8rkw")]
+
+[node name="CancelDialogue" parent="." unique_id=1772664086 instance=ExtResource("2_ja6b5")]

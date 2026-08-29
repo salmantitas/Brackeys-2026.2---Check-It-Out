@@ -1,0 +1,420 @@
+[gd_scene format=3 uid="uid://db3fwtomb4wtb"]
+
+[ext_resource type="Script" uid="uid://0dfe8ixdl8e1" path="res://scenes/end_of_day.gd" id="1_18edc"]
+[ext_resource type="Script" uid="uid://b6xnvefhcot7f" path="res://music_auto_trigger.gd" id="2_56bvd"]
+[ext_resource type="Texture2D" uid="uid://c3u3sio5boia1" path="res://assets/art/game_bg.webp" id="2_s8wv6"]
+[ext_resource type="AudioStream" uid="uid://tqhyb6nm3vbb" path="res://assets/audio/music/end_of_day_sunset_baklava.wav" id="3_bv4ln"]
+[ext_resource type="Texture2D" uid="uid://b7vr4sdh6db7b" path="res://assets/art/eod_payslip.webp" id="3_tddlx"]
+[ext_resource type="Texture2D" uid="uid://dgc7ajj32mr2g" path="res://assets/art/eod_shutter.webp" id="4_bv4ln"]
+[ext_resource type="FontFile" uid="uid://j4l5vqoxurd0" path="res://assets/font/font_MerchantCopy-GOXq.ttf" id="4_qk3j7"]
+[ext_resource type="Texture2D" uid="uid://dyeorr5xdnlm" path="res://assets/art/eod_fired.webp" id="5_qns34"]
+
+[sub_resource type="Animation" id="Animation_tddlx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/EodShutter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, -544)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Payslip:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/VBoxContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/EodShutter:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/Payslip:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/VBoxContainer:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_bv4ln"]
+resource_name = "new_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/EodShutter:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(3, 0.1),
+"update": 0,
+"values": [Vector2(960, -544), Vector2(960, 543)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Payslip:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1616), Vector2(0, 0), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/VBoxContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/EodShutter:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/Payslip:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/VBoxContainer:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tddlx"]
+_data = {
+&"RESET": SubResource("Animation_tddlx"),
+&"new_animation": SubResource("Animation_bv4ln")
+}
+
+[sub_resource type="Gradient" id="Gradient_bv4ln"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tddlx"]
+gradient = SubResource("Gradient_bv4ln")
+
+[node name="EndOfDay" type="CanvasLayer" unique_id=1983696688]
+script = ExtResource("1_18edc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1812283794]
+libraries/ = SubResource("AnimationLibrary_tddlx")
+
+[node name="Control" type="Control" parent="." unique_id=1331896495]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=183731105]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("GradientTexture1D_tddlx")
+
+[node name="GameBg" type="Sprite2D" parent="Control/TextureRect" unique_id=991872584]
+position = Vector2(967, 543)
+texture = ExtResource("2_s8wv6")
+
+[node name="EodShutter" type="Sprite2D" parent="Control" unique_id=1850275721]
+position = Vector2(960, -544)
+texture = ExtResource("4_bv4ln")
+
+[node name="Payslip" type="Control" parent="Control" unique_id=171213001]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 0.0012207031
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PayslipSprite" type="Sprite2D" parent="Control/Payslip" unique_id=125674989]
+position = Vector2(958, 361)
+texture = ExtResource("3_tddlx")
+
+[node name="EodFired" type="Sprite2D" parent="Control/Payslip/PayslipSprite" unique_id=1057000438]
+unique_name_in_owner = true
+position = Vector2(-69, 179)
+rotation = 0.070737325
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_qns34")
+
+[node name="GrossLabel" type="Label" parent="Control/Payslip" unique_id=1644728055]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 807.511
+offset_top = 175.0
+offset_right = 927.79266
+offset_bottom = 241.99998
+rotation = 0.11685115
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qk3j7")
+theme_override_font_sizes/font_size = 48
+text = "10.00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ItemsSoldLabel" type="Label" parent="Control/Payslip" unique_id=1819397081]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 797.8112
+offset_top = 229.00002
+offset_right = 874.0334
+offset_bottom = 296.0
+rotation = 0.11685115
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qk3j7")
+theme_override_font_sizes/font_size = 48
+text = "12"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CustomersGainedLabel" type="Label" parent="Control/Payslip" unique_id=2130436917]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 788.8112
+offset_top = 287.0
+offset_right = 864.8284
+offset_bottom = 354.0
+rotation = 0.11685115
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qk3j7")
+theme_override_font_sizes/font_size = 48
+text = "3"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TaxedGrossLabel" type="Label" parent="Control/Payslip" unique_id=904828152]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 776.8112
+offset_top = 412.0
+offset_right = 897.0929
+offset_bottom = 479.0
+rotation = 0.11685115
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qk3j7")
+theme_override_font_sizes/font_size = 48
+text = "10.00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LossLabel" type="Label" parent="Control/Payslip" unique_id=1731317906]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1094.8112
+offset_top = 212.0
+offset_right = 1215.0929
+offset_bottom = 279.0
+rotation = 0.11685115
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qk3j7")
+theme_override_font_sizes/font_size = 48
+text = "- 4.00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TheftLabel" type="Label" parent="Control/Payslip" unique_id=1648343045]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1087.8114
+offset_top = 268.0
+offset_right = 1161.3906
+offset_bottom = 335.0
+rotation = 0.11685115
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qk3j7")
+theme_override_font_sizes/font_size = 48
+text = "- 6"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="CustomersLostLabel" type="Label" parent="Control/Payslip" unique_id=915987544]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1079.8113
+offset_top = 334.0
+offset_right = 1152.5133
+offset_bottom = 401.0
+rotation = 0.11685115
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qk3j7")
+theme_override_font_sizes/font_size = 48
+text = "- 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="SalaryLabel" type="Label" parent="Control/Payslip" unique_id=729527264]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1362.8112
+offset_top = 246.0
+offset_right = 1483.0929
+offset_bottom = 313.0
+rotation = 0.11685115
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qk3j7")
+theme_override_font_sizes/font_size = 48
+text = "6.00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TotalLabel" type="Label" parent="Control/Payslip" unique_id=1615413118]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1338.8113
+offset_top = 435.0
+offset_right = 1459.093
+offset_bottom = 502.0
+rotation = 0.11685115
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qk3j7")
+theme_override_font_sizes/font_size = 48
+text = "10.00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DednLabel" type="Label" parent="Control/Payslip" unique_id=1271794365]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1333.8113
+offset_top = 484.0
+offset_right = 1454.093
+offset_bottom = 551.0
+rotation = 0.11685115
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qk3j7")
+theme_override_font_sizes/font_size = 48
+text = "6.00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="NetPayLabel" type="Label" parent="Control/Payslip" unique_id=1737224532]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1305.53
+offset_top = 538.5971
+offset_right = 1446.4222
+offset_bottom = 605.5971
+rotation = 0.11685115
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qk3j7")
+theme_override_font_sizes/font_size = 48
+text = "4.00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=283768352]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -276.0
+offset_top = 287.0
+offset_right = 327.0
+offset_bottom = 965.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContinueButton" type="Button" parent="Control/VBoxContainer" unique_id=2040689467]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "CONTINUE"
+
+[node name="RestartButton" type="Button" parent="Control/VBoxContainer" unique_id=2082892219]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "RESTART"
+
+[node name="MusicAutoTrigger" type="Node" parent="." unique_id=1961004425]
+script = ExtResource("2_56bvd")
+track = ExtResource("3_bv4ln")
+metadata/_custom_type_script = "uid://b6xnvefhcot7f"
+
+[connection signal="pressed" from="Control/VBoxContainer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bou1cuyfwlvj4"]
+
+[ext_resource type="Texture2D" uid="uid://c3u3sio5boia1" path="res://assets/art/game_bg.webp" id="1_7p1xr"]
+
+[sub_resource type="Gradient" id="Gradient_8cj0n"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uwrxv"]
+gradient = SubResource("Gradient_8cj0n")
+
+[node name="Background" type="TextureRect" unique_id=1377044949]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("GradientTexture2D_uwrxv")
+
+[node name="S-MART" type="Sprite2D" parent="." unique_id=591676138]
+position = Vector2(967, 543)
+texture = ExtResource("1_7p1xr")

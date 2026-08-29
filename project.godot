@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Brackeys 2026.2 - Check It Out"
+run/main_scene="uid://blif0poth6hrf"
+config/features=PackedStringArray("4.6", "Forward Plus")
+config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://cg02hcen2ri6"
+
+[autoload]
+
+SignalBus="*uid://lfk8gccb7ptx"
+StoreManager="*uid://bn1p17myc0hcr"
+DayNightCycleManager="*uid://snihe0f02luf"
+SceneManager="*uid://efgupin48c63"
+GameData="*uid://dt2apcchiyajj"
+Audio="*uid://bhj7124n1rb5h"
+CharacterLibrary="*uid://c8uypbrqwvoyg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=4
+window/stretch/mode="canvas_items"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"

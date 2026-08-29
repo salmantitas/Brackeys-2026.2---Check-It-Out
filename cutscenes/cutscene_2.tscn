@@ -1,0 +1,352 @@
+[gd_scene format=3 uid="uid://bapi5wv61w68x"]
+
+[ext_resource type="PackedScene" uid="uid://bou1cuyfwlvj4" path="res://backgrounds/game_background.tscn" id="1_4kkgw"]
+[ext_resource type="Script" uid="uid://di2gow7ddd7uk" path="res://cutscenes/cutscene.gd" id="1_r7xkd"]
+[ext_resource type="PackedScene" uid="uid://c3tbkindo7ih8" path="res://backgrounds/game_counter.tscn" id="4_eng6q"]
+[ext_resource type="Texture2D" uid="uid://bloh573hrveih" path="res://assets/characters/manager.png" id="5_4kkgw"]
+[ext_resource type="Script" uid="uid://b6xnvefhcot7f" path="res://music_auto_trigger.gd" id="5_wb4g2"]
+[ext_resource type="Texture2D" uid="uid://dhipwhcgv0njo" path="res://assets/art/hud_npc_textbox.webp" id="6_eng6q"]
+[ext_resource type="AudioStream" uid="uid://txdr427xskld" path="res://assets/audio/music/gameplay_music_apple_rush.wav" id="6_jgxny"]
+[ext_resource type="FontFile" uid="uid://g5q7vwtxaqnw" path="res://assets/font/font_BRLNSDB.TTF" id="7_clus7"]
+
+[sub_resource type="Animation" id="Animation_eng6q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Manager:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2070, 590)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HudNpcTextbox:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HudNpcTextbox:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.01, 0.01)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HudNpcTextbox:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1203, 510.99997)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HudNpcTextbox/MarginContainer/Label:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HudNpcTextbox/MarginContainer/Label:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HudNpcTextbox/MarginContainer/Label2:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HudNpcTextbox/MarginContainer/Label3:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("HudNpcTextbox/MarginContainer/Label4:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4kkgw"]
+resource_name = "cutscene"
+length = 5.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Manager:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 4.25, 4.5, 4.6, 5.4, 5.5),
+"transitions": PackedFloat32Array(2.378414, 0.36602142, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2070, 590), Vector2(1268, 590), Vector2(1268, 590), Vector2(2034, 590), Vector2(1793, 590), Vector2(1793, 590), Vector2(2034, 590)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HudNpcTextbox:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.75, 4.233333, 4.6, 5.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HudNpcTextbox:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.75, 1, 4, 4.25, 4.6, 4.7, 5.3, 5.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.01, 0.01), Vector2(0.4, 0.4), Vector2(0.4, 0.4), Vector2(0.01, 0.01), Vector2(0.01, 0.01), Vector2(0.4, 0.4), Vector2(0.4, 0.4), Vector2(0.01, 0.01)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HudNpcTextbox:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.75, 1, 4, 4.25, 4.6, 4.7, 5.3, 5.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1203, 510.99997), Vector2(1002, 353), Vector2(1002, 353), Vector2(1203, 510.99997), Vector2(1728, 511), Vector2(1537, 352), Vector2(1537, 352), Vector2(1728, 511)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HudNpcTextbox/MarginContainer/Label:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HudNpcTextbox/MarginContainer/Label:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1, 1.25, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HudNpcTextbox/MarginContainer/Label2:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2, 2.25, 2.75, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HudNpcTextbox/MarginContainer/Label3:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(3, 3.25, 3.75, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("HudNpcTextbox/MarginContainer/Label4:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(4.7, 4.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eng6q"]
+_data = {
+&"RESET": SubResource("Animation_eng6q"),
+&"cutscene": SubResource("Animation_4kkgw")
+}
+
+[node name="Cutscene2" type="Node2D" unique_id=1634610352]
+script = ExtResource("1_r7xkd")
+next_scene = "uid://c185ubicquv1j"
+
+[node name="Background" parent="." unique_id=1377044949 instance=ExtResource("1_4kkgw")]
+
+[node name="MusicAutoTrigger" type="Node" parent="." unique_id=1595456313]
+script = ExtResource("5_wb4g2")
+track = ExtResource("6_jgxny")
+metadata/_custom_type_script = "uid://b6xnvefhcot7f"
+
+[node name="GameCounter" parent="." unique_id=2037230404 instance=ExtResource("4_eng6q")]
+position = Vector2(968, 541)
+
+[node name="Manager" type="Sprite2D" parent="." unique_id=1464727731]
+position = Vector2(2070, 590)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_4kkgw")
+
+[node name="HudNpcTextbox" type="Sprite2D" parent="." unique_id=1666195889]
+position = Vector2(1203, 510.99997)
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("6_eng6q")
+flip_h = true
+
+[node name="MarginContainer" type="MarginContainer" parent="HudNpcTextbox" unique_id=375272957]
+offset_left = -465.0
+offset_top = -395.0
+offset_right = 392.5
+offset_bottom = 337.49994
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="HudNpcTextbox/MarginContainer" unique_id=1787848323]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_clus7")
+theme_override_font_sizes/font_size = 100
+text = "Listen carefully, rookie, I'm not going to repeat myself."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="HudNpcTextbox/MarginContainer" unique_id=446084965]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_clus7")
+theme_override_font_sizes/font_size = 100
+text = "All you have to do is talk to customers and help them at the checkout."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="HudNpcTextbox/MarginContainer" unique_id=1101070152]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_clus7")
+theme_override_font_sizes/font_size = 100
+text = "If you can't do that, you're fired."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="HudNpcTextbox/MarginContainer" unique_id=888239659]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_clus7")
+theme_override_font_sizes/font_size = 100
+text = "Oh, and watch out for shoplifters. You can't trust anyone these days."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2090846072]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=685241012]
+libraries/ = SubResource("AnimationLibrary_eng6q")
+
+[node name="Control" type="Control" parent="." unique_id=1040687777]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Label3" type="Label" parent="Control" unique_id=558461285]
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -349.0
+offset_top = -114.0
+offset_right = 349.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.13174233, 0.13174233, 0.13174233, 1)
+theme_override_fonts/font = ExtResource("7_clus7")
+theme_override_font_sizes/font_size = 48
+text = "Press Any Button to Skip"
+horizontal_alignment = 1
+vertical_alignment = 1

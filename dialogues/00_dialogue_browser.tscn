@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://belg6mw1rp84r"]
+
+[ext_resource type="Script" uid="uid://qc62aas86b67" path="res://dialogues/dialogue.gd" id="1_6t4nj"]
+[ext_resource type="Script" uid="uid://bu0cpmpqh0278" path="res://dialogues/assist_dialogue.gd" id="2_7rsed"]
+[ext_resource type="PackedScene" uid="uid://c0n3408koex5h" path="res://dialogues/00_dialogue_exit.tscn" id="3_piix6"]
+[ext_resource type="PackedScene" uid="uid://dn0v3e7macvlu" path="res://dialogues/accuse_dialogue.tscn" id="4_g50j6"]
+
+[node name="00InitialDialogue" type="Node" unique_id=939059488]
+script = ExtResource("1_6t4nj")
+metadata/_custom_type_script = "uid://qc62aas86b67"
+
+[node name="AssistDialogue" type="Node" parent="." unique_id=405368990]
+script = ExtResource("2_7rsed")
+current_dialogue = "Offer to Assist Customer"
+line = "Just browsing."
+executible = 1
+metadata/_custom_type_script = "uid://qc62aas86b67"
+
+[node name="CancelDialogue" parent="AssistDialogue" unique_id=1928749868 instance=ExtResource("3_piix6")]
+
+[node name="AccuseDialogue" parent="." unique_id=1000084984 instance=ExtResource("4_g50j6")]
+
+[node name="CancelDialogue" parent="." unique_id=1772664086 instance=ExtResource("3_piix6")]

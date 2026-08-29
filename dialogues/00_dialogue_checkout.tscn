@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://clgvbnosb5ip5"]
+
+[ext_resource type="Script" uid="uid://qc62aas86b67" path="res://dialogues/dialogue.gd" id="1_orjg0"]
+[ext_resource type="PackedScene" uid="uid://c0n3408koex5h" path="res://dialogues/00_dialogue_exit.tscn" id="2_d2rvv"]
+[ext_resource type="PackedScene" uid="uid://dn0v3e7macvlu" path="res://dialogues/accuse_dialogue.tscn" id="3_oglkd"]
+
+[node name="00DialogueCheckout" type="Node" unique_id=939059488]
+script = ExtResource("1_orjg0")
+metadata/_custom_type_script = "uid://qc62aas86b67"
+
+[node name="CheckoutDialogue" type="Node" parent="." unique_id=405368990]
+script = ExtResource("1_orjg0")
+current_dialogue = "Offer to Check Out"
+line = "Thank You"
+max_visit_count = 1
+executible = 3
+metadata/_custom_type_script = "uid://qc62aas86b67"
+
+[node name="CancelDialogue" parent="CheckoutDialogue" unique_id=621523012 instance=ExtResource("2_d2rvv")]
+
+[node name="AccuseDialogue" parent="." unique_id=1000084984 instance=ExtResource("3_oglkd")]
+
+[node name="CancelDialogue" parent="." unique_id=810069515 instance=ExtResource("2_d2rvv")]

@@ -1,0 +1,385 @@
+[gd_scene format=3 uid="uid://1hwyuo6xrrke"]
+
+[ext_resource type="Script" uid="uid://ctlkfj1rldqhh" path="res://npc/stolen_cart.gd" id="1_hqq4l"]
+[ext_resource type="Texture2D" uid="uid://knjnuehg2p0g" path="res://assets/art/hud_stolen_bg.webp" id="2_okag1"]
+[ext_resource type="Texture2D" uid="uid://na58p2hf8mb0" path="res://assets/art/hud_stolen_magnifying.webp" id="3_1jxdm"]
+[ext_resource type="Texture2D" uid="uid://c4v5xhyq4446l" path="res://assets/art/hud_product_check_exit.webp" id="4_x506m"]
+[ext_resource type="Texture2D" uid="uid://1tdyq85tvdpl" path="res://assets/art/product_banana.webp" id="5_dkxf6"]
+[ext_resource type="Texture2D" uid="uid://dltqx0s5e2m1i" path="res://assets/art/product_bread.webp" id="6_yyc8b"]
+[ext_resource type="Texture2D" uid="uid://dxv5rs01ofx7s" path="res://assets/art/product_butter.webp" id="7_y0ce5"]
+[ext_resource type="Texture2D" uid="uid://8hyxpfucmq7u" path="res://assets/art/product_dragonfruit.webp" id="8_ii33o"]
+[ext_resource type="Texture2D" uid="uid://cfklpxyfcjmu2" path="res://assets/art/product_meat.webp" id="9_2tunw"]
+[ext_resource type="Texture2D" uid="uid://xu7ltmtg4hac" path="res://assets/art/product_squid.webp" id="10_4yu5u"]
+[ext_resource type="Texture2D" uid="uid://db7lg1fmt0taq" path="res://assets/art/product_tomato.webp" id="11_xseqa"]
+
+[sub_resource type="Animation" id="Animation_yq8j5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HudStolenBg:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HudStolenBg:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HudStolenMagnifying:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, -546)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CancelButton:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CancelButton:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ProductDisplay:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ProductDisplay:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 1, 0, 0.19607843)]
+}
+
+[sub_resource type="Animation" id="Animation_10ivq"]
+resource_name = "cart_away"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.40210375, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ProductDisplay:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ProductDisplay:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 18.892157, 0, 0.11764706), Color(0, 18.892157, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CancelButton:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CancelButton:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HudStolenMagnifying:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(960, 544), Vector2(960, 544), Vector2(960, -559)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("HudStolenBg:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1.5157164, 0.3186403),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_d2ohp"]
+resource_name = "check_pocket"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HudStolenBg:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HudStolenBg:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(4, 0.25),
+"update": 0,
+"values": [Vector2(0.001, 0.001), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HudStolenMagnifying:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.4),
+"transitions": PackedFloat32Array(1, 0.39229205, 0.40612623),
+"update": 0,
+"values": [Vector2(960, -546), Vector2(960, -546), Vector2(960, 544)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CancelButton:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CancelButton:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ProductDisplay:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ProductDisplay:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.4, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 1, 0, 0), Color(0, 18.892157, 0, 0.11764706)]
+}
+
+[sub_resource type="Animation" id="Animation_20prf"]
+resource_name = "default"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yq8j5"]
+_data = {
+&"RESET": SubResource("Animation_yq8j5"),
+&"cart_away": SubResource("Animation_10ivq"),
+&"check_pocket": SubResource("Animation_d2ohp"),
+&"default": SubResource("Animation_20prf")
+}
+
+[node name="StolenCart" type="CanvasLayer" unique_id=1436481536]
+process_mode = 3
+script = ExtResource("1_hqq4l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=266900336]
+libraries/ = SubResource("AnimationLibrary_yq8j5")
+
+[node name="HudStolenBg" type="Sprite2D" parent="." unique_id=1473547723]
+position = Vector2(967, 543)
+texture = ExtResource("2_okag1")
+
+[node name="ProductDisplay" type="Control" parent="." unique_id=645594076]
+modulate = Color(0, 1, 0, 0.19607843)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 774.0
+offset_top = 144.0
+offset_right = 1115.0
+offset_bottom = 845.9999
+
+[node name="BananaSprite" type="Sprite2D" parent="ProductDisplay" unique_id=1893136943]
+position = Vector2(250, 91)
+rotation = -2.7713997
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_dkxf6")
+
+[node name="BreadSprite" type="Sprite2D" parent="ProductDisplay" unique_id=116862134]
+position = Vector2(72, 210)
+rotation = 0.15706897
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("6_yyc8b")
+
+[node name="ButterSprite" type="Sprite2D" parent="ProductDisplay" unique_id=284120649]
+position = Vector2(-45, 157)
+rotation = -1.1168145
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("7_y0ce5")
+
+[node name="DragonfruitSprite" type="Sprite2D" parent="ProductDisplay" unique_id=857416099]
+position = Vector2(-49, 418)
+rotation = -0.7803482
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_ii33o")
+
+[node name="MeatSprite" type="Sprite2D" parent="ProductDisplay" unique_id=2117628252]
+position = Vector2(271, 316)
+rotation = 0.2699094
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("9_2tunw")
+
+[node name="SquidSprite" type="Sprite2D" parent="ProductDisplay" unique_id=666870195]
+position = Vector2(239, 498)
+rotation = 0.034263194
+texture = ExtResource("10_4yu5u")
+
+[node name="TomatoSprite" type="Sprite2D" parent="ProductDisplay" unique_id=2010107544]
+position = Vector2(157, 428)
+rotation = -0.024339378
+texture = ExtResource("11_xseqa")
+
+[node name="HudStolenMagnifying" type="Sprite2D" parent="." unique_id=661715926]
+position = Vector2(960, -546)
+texture = ExtResource("3_1jxdm")
+
+[node name="CancelButton" type="TextureButton" parent="." unique_id=2074815470]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 297.0
+offset_top = 17.0
+offset_right = 505.0
+offset_bottom = 243.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_x506m")

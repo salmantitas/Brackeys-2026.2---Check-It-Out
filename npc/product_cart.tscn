@@ -1,0 +1,890 @@
+[gd_scene format=3 uid="uid://8h4fcap0esuu"]
+
+[ext_resource type="Texture2D" uid="uid://bbga5ubwy7mlq" path="res://assets/art/hud_product_check_bg.webp" id="1_3kdu6"]
+[ext_resource type="Script" uid="uid://cj5d243h4lkel" path="res://npc/product_cart.gd" id="1_okab3"]
+[ext_resource type="Texture2D" uid="uid://binuo4oac7rbw" path="res://assets/art/hud_product_check_cart.webp" id="2_okab3"]
+[ext_resource type="Texture2D" uid="uid://c4v5xhyq4446l" path="res://assets/art/hud_product_check_exit.webp" id="3_uanea"]
+[ext_resource type="Texture2D" uid="uid://ba6xef7bvibev" path="res://assets/art/hud_product_check_title.webp" id="4_0vygr"]
+[ext_resource type="Texture2D" uid="uid://1tdyq85tvdpl" path="res://assets/art/product_banana.webp" id="6_6gt74"]
+[ext_resource type="Texture2D" uid="uid://crkax73dip81q" path="res://assets/art/hud_panel.webp" id="7_tt8le"]
+[ext_resource type="FontFile" uid="uid://g5q7vwtxaqnw" path="res://assets/font/font_BRLNSDB.TTF" id="8_bn3p5"]
+[ext_resource type="Texture2D" uid="uid://dltqx0s5e2m1i" path="res://assets/art/product_bread.webp" id="9_3qgum"]
+[ext_resource type="Texture2D" uid="uid://dxv5rs01ofx7s" path="res://assets/art/product_butter.webp" id="10_pg1xn"]
+[ext_resource type="Texture2D" uid="uid://8hyxpfucmq7u" path="res://assets/art/product_dragonfruit.webp" id="11_yt5ly"]
+[ext_resource type="Texture2D" uid="uid://cfklpxyfcjmu2" path="res://assets/art/product_meat.webp" id="12_v23hp"]
+[ext_resource type="Texture2D" uid="uid://xu7ltmtg4hac" path="res://assets/art/product_squid.webp" id="13_tt8le"]
+[ext_resource type="Texture2D" uid="uid://db7lg1fmt0taq" path="res://assets/art/product_tomato.webp" id="13_uokad"]
+
+[sub_resource type="Animation" id="Animation_yq8j5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BG:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(961, 1624)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cart:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(961, 543)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Title:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Title:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CancelButton:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CancelButton:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BG:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Cart:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BG:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Cart:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ProductDisplay:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("ProductDisplay:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("ProductDisplay:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(774, 144)]
+}
+
+[sub_resource type="Animation" id="Animation_10ivq"]
+resource_name = "cart_away"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.40210375, 0.5),
+"transitions": PackedFloat32Array(0.22531249, 3.9999948, 3.9999948),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1080), Vector2(0, -1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.40210375, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.40210375, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BG:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cart:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CancelButton:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Title:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("BG:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Cart:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("CancelButton:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Title:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("BG:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(0.2, 4),
+"update": 0,
+"values": [Vector2(961, 543), Vector2(961, -544)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Cart:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.2, 0.17677666),
+"update": 0,
+"values": [Vector2(961, 543), Vector2(961, -544)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ProductDisplay:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("ProductDisplay:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("ProductDisplay:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.2, 0.176),
+"update": 0,
+"values": [Vector2(774, 144), Vector2(774, -889)]
+}
+
+[sub_resource type="Animation" id="Animation_d2ohp"]
+resource_name = "check_cart"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.667),
+"transitions": PackedFloat32Array(0.24148409, 8.282112),
+"update": 0,
+"values": [Vector2(0, 1080), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("TextureRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BG:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.667),
+"transitions": PackedFloat32Array(0.24, 8.2),
+"update": 0,
+"values": [Vector2(961, 1624), Vector2(961, 543)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cart:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.3335, 0.667),
+"transitions": PackedFloat32Array(0.24, 8.2),
+"update": 0,
+"values": [Vector2(961, 1624), Vector2(961, 543)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Title:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.667, 0.83375),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Title:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.667, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("CancelButton:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.83375, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CancelButton:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.83375, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("BG:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Cart:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Cart:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("BG:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ProductDisplay:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0.75, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("ProductDisplay:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_20prf"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("TextureRect:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yq8j5"]
+_data = {
+&"RESET": SubResource("Animation_yq8j5"),
+&"cart_away": SubResource("Animation_10ivq"),
+&"check_cart": SubResource("Animation_d2ohp"),
+&"default": SubResource("Animation_20prf")
+}
+
+[sub_resource type="Gradient" id="Gradient_nfjp7"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_78vqx"]
+gradient = SubResource("Gradient_nfjp7")
+
+[node name="ProductCart" type="CanvasLayer" unique_id=361799052]
+process_mode = 3
+script = ExtResource("1_okab3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1027348148]
+libraries/ = SubResource("AnimationLibrary_yq8j5")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2071680216]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1080.0
+offset_bottom = 1080.0015
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_78vqx")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=292178092]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(961, 1624)
+texture = ExtResource("1_3kdu6")
+
+[node name="Cart" type="Sprite2D" parent="." unique_id=102094588]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(961, 543)
+texture = ExtResource("2_okab3")
+
+[node name="CancelButton" type="TextureButton" parent="." unique_id=800551350]
+offset_left = 297.0
+offset_top = 17.0
+offset_right = 505.0
+offset_bottom = 243.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_uanea")
+
+[node name="Title" type="Sprite2D" parent="." unique_id=708658738]
+position = Vector2(1187, 113)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_0vygr")
+
+[node name="ProductDisplay" type="Control" parent="." unique_id=1619426118]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 774.0
+offset_top = 144.0
+offset_right = 1115.0
+offset_bottom = 845.9999
+
+[node name="Banana" type="Control" parent="ProductDisplay" unique_id=1313648900]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BananaSprite" type="Sprite2D" parent="ProductDisplay/Banana" unique_id=1004930794]
+position = Vector2(196, 139)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("6_6gt74")
+
+[node name="BananaPanel" type="Sprite2D" parent="ProductDisplay/Banana" unique_id=1589449355]
+position = Vector2(313.34998, 162)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_tt8le")
+
+[node name="BananaCount" type="Label" parent="ProductDisplay/Banana" unique_id=535946643]
+layout_mode = 0
+offset_left = 278.34998
+offset_top = 132.0
+offset_right = 348.34998
+offset_bottom = 187.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_bn3p5")
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bread" type="Control" parent="ProductDisplay" unique_id=684001705]
+anchors_preset = 0
+offset_left = -90.0
+offset_top = 111.0
+offset_right = -50.0
+offset_bottom = 151.0
+
+[node name="BreadSprite" type="Sprite2D" parent="ProductDisplay/Bread" unique_id=677450282]
+position = Vector2(196, 139)
+rotation = 0.15706898
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("9_3qgum")
+
+[node name="BreadPanel" type="Sprite2D" parent="ProductDisplay/Bread" unique_id=837501062]
+position = Vector2(293.34998, 167)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_tt8le")
+
+[node name="BreadCount" type="Label" parent="ProductDisplay/Bread" unique_id=817387833]
+layout_mode = 0
+offset_left = 258.34998
+offset_top = 137.0
+offset_right = 328.34998
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_bn3p5")
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Butter" type="Control" parent="ProductDisplay" unique_id=1202224664]
+anchors_preset = 0
+offset_left = 126.0
+offset_top = 199.0
+offset_right = 166.0
+offset_bottom = 239.0
+
+[node name="ButterSprite" type="Sprite2D" parent="ProductDisplay/Butter" unique_id=585429385]
+position = Vector2(196, 139)
+rotation = -1.1168145
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("10_pg1xn")
+
+[node name="ButterPanel" type="Sprite2D" parent="ProductDisplay/Butter" unique_id=1685652106]
+position = Vector2(221.34998, 67.00001)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_tt8le")
+
+[node name="ButterCount" type="Label" parent="ProductDisplay/Butter" unique_id=926326581]
+layout_mode = 0
+offset_left = 186.34998
+offset_top = 37.0
+offset_right = 256.34998
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_bn3p5")
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dragonfruit" type="Control" parent="ProductDisplay" unique_id=1604492589]
+anchors_preset = 0
+offset_left = -215.0
+offset_top = 396.0
+offset_right = -175.0
+offset_bottom = 436.0
+
+[node name="DragonfruitSprite" type="Sprite2D" parent="ProductDisplay/Dragonfruit" unique_id=415575331]
+position = Vector2(196, 139)
+rotation = 0.2699094
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_yt5ly")
+
+[node name="DragonfruitPanel" type="Sprite2D" parent="ProductDisplay/Dragonfruit" unique_id=1930310333]
+position = Vector2(203.34999, 222)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_tt8le")
+
+[node name="DragonfruitCount" type="Label" parent="ProductDisplay/Dragonfruit" unique_id=1456309695]
+layout_mode = 0
+offset_left = 168.34998
+offset_top = 192.0
+offset_right = 238.34998
+offset_bottom = 247.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_bn3p5")
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Meat" type="Control" parent="ProductDisplay" unique_id=342773493]
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 526.0
+offset_right = 41.0
+offset_bottom = 566.0
+
+[node name="MeatSprite" type="Sprite2D" parent="ProductDisplay/Meat" unique_id=798707971]
+position = Vector2(196, 139)
+rotation = 0.2699094
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("12_v23hp")
+
+[node name="MeatPanel" type="Sprite2D" parent="ProductDisplay/Meat" unique_id=405379665]
+position = Vector2(210.34999, 197)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_tt8le")
+
+[node name="MeatCount" type="Label" parent="ProductDisplay/Meat" unique_id=907892913]
+layout_mode = 0
+offset_left = 175.34998
+offset_top = 167.0
+offset_right = 245.34998
+offset_bottom = 222.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_bn3p5")
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Squid" type="Control" parent="ProductDisplay" unique_id=1311231312]
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 526.0
+offset_right = 41.0
+offset_bottom = 566.0
+
+[node name="SquidSprite" type="Sprite2D" parent="ProductDisplay/Squid" unique_id=601736212]
+position = Vector2(374, 56)
+rotation = -1.1074358
+texture = ExtResource("13_tt8le")
+
+[node name="SquidPanel" type="Sprite2D" parent="ProductDisplay/Squid" unique_id=890613500]
+position = Vector2(410.34998, 116)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_tt8le")
+
+[node name="SquidCount" type="Label" parent="ProductDisplay/Squid" unique_id=1669165105]
+layout_mode = 0
+offset_left = 375.34998
+offset_top = 86.0
+offset_right = 445.34998
+offset_bottom = 141.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_bn3p5")
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tomato" type="Control" parent="ProductDisplay" unique_id=1669593448]
+anchors_preset = 0
+offset_top = 366.0
+offset_right = 40.0
+offset_bottom = 406.0
+
+[node name="TomatoSprite" type="Sprite2D" parent="ProductDisplay/Tomato" unique_id=520805617]
+position = Vector2(196, 139)
+rotation = -0.024339378
+texture = ExtResource("13_uokad")
+
+[node name="TomatoPanel" type="Sprite2D" parent="ProductDisplay/Tomato" unique_id=1151772055]
+position = Vector2(191.34999, 201)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("7_tt8le")
+
+[node name="TomatoCount" type="Label" parent="ProductDisplay/Tomato" unique_id=1282220535]
+layout_mode = 0
+offset_left = 156.34998
+offset_top = 171.0
+offset_right = 226.34998
+offset_bottom = 226.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_bn3p5")
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

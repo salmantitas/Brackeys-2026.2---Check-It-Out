@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c8uypbrqwvoyg"]
+
+[ext_resource type="Script" uid="uid://qktlvjbwopy8" path="res://00_globals/character_library.gd" id="1_evp6k"]
+[ext_resource type="Texture2D" uid="uid://cgklp7kh88vne" path="res://assets/characters/customer_1_1.png" id="2_tbauw"]
+[ext_resource type="Texture2D" uid="uid://ebljpgvulbt2" path="res://assets/characters/customer_2_1.png" id="3_yd28p"]
+[ext_resource type="Texture2D" uid="uid://h8k12o10gfg4" path="res://assets/characters/customer_3_1.png" id="4_yd28p"]
+
+[node name="CharacterLibrary" type="Node2D" unique_id=1880117025]
+script = ExtResource("1_evp6k")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=956002301]
+position = Vector2(9, -175)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_tbauw")
+
+[node name="Sprite2" type="Sprite2D" parent="." unique_id=1385879994]
+position = Vector2(-14, -204.99998)
+scale = Vector2(0.14133753, 0.14133753)
+texture = ExtResource("3_yd28p")
+
+[node name="Sprite3" type="Sprite2D" parent="." unique_id=879412897]
+position = Vector2(8.000002, -200.99998)
+scale = Vector2(0.15576655, 0.15576655)
+texture = ExtResource("4_yd28p")

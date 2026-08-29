@@ -1,0 +1,261 @@
+[gd_scene format=3 uid="uid://dsmdd1m7h60or"]
+
+[ext_resource type="Texture2D" uid="uid://c7do81mqh7r2x" path="res://icon.svg" id="1_gb7d2"]
+[ext_resource type="Script" uid="uid://c8lw8vrb3r72u" path="res://npc/npc.gd" id="2_v563t"]
+[ext_resource type="Texture2D" uid="uid://cgklp7kh88vne" path="res://assets/characters/customer_1_1.png" id="3_m8r5x"]
+[ext_resource type="Script" uid="uid://capg2xisgb4sv" path="res://npc/state_machine.gd" id="4_r13sv"]
+[ext_resource type="Script" uid="uid://cbv2w347581kx" path="res://npc/states/state_browsing.gd" id="5_hvt6j"]
+[ext_resource type="Script" uid="uid://x1n4h47ydq2e" path="res://npc/states/00_state.gd" id="6_gne7t"]
+[ext_resource type="Script" uid="uid://g2x0ewbmqb1p" path="res://npc/states/state_checkout.gd" id="7_b4owr"]
+[ext_resource type="Script" uid="uid://ch2dol01cxmre" path="res://npc/states/state_leaving.gd" id="8_xolcs"]
+[ext_resource type="Script" uid="uid://dn5s4jjo0y8pt" path="res://npc/decision_engine/decision_engine_basic_customer.gd" id="9_6t7l6"]
+[ext_resource type="PackedScene" uid="uid://8h4fcap0esuu" path="res://npc/product_cart.tscn" id="10_p6kt5"]
+[ext_resource type="PackedScene" uid="uid://1hwyuo6xrrke" path="res://npc/stolen_cart.tscn" id="11_2heda"]
+[ext_resource type="Texture2D" uid="uid://cuuq053k70as8" path="res://assets/art/npc_stat_browsing.webp" id="12_771p3"]
+[ext_resource type="Texture2D" uid="uid://nrwpsbs4mypn" path="res://assets/art/npc_stat_checkout.webp" id="13_fqasq"]
+[ext_resource type="Texture2D" uid="uid://1iad5t3n5x1f" path="res://assets/art/npc_stat_leaving.webp" id="14_m7l68"]
+[ext_resource type="PackedScene" uid="uid://nir70ty08lbu" path="res://npc/speechbox.tscn" id="15_v563t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpyoa"]
+size = Vector2(220, 530)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_20prf"]
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_d2ohp"]
+offsets = PackedFloat32Array(0.9879808, 0.99759614, 1)
+colors = PackedColorArray(0, 0, 0, 0.78431374, 0.18990384, 0.18990384, 0.18990384, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_woxlu"]
+gradient = SubResource("Gradient_d2ohp")
+
+[sub_resource type="GDScript" id="GDScript_hktl6"]
+script/source = "extends Control
+
+@export var npc : NPC
+
+@onready var browsing: Sprite2D = $Browsing
+@onready var check_out: Sprite2D = $CheckOut
+@onready var leaving: Sprite2D = $Leaving
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	browsing.show()
+	check_out.hide()
+	leaving.hide()
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if npc.state_machine.current_state.name == \"Browsing\":
+		pass
+	elif npc.state_machine.current_state.name == \"CheckOut\":
+		browsing.hide()
+		check_out.show()
+		leaving.hide()
+	elif npc.state_machine.current_state.name == \"Leaving\":
+		browsing.hide()
+		check_out.hide()
+		leaving.show()
+"
+
+[node name="NPCBrowser" type="Sprite2D" unique_id=456182731]
+texture = ExtResource("1_gb7d2")
+script = ExtResource("2_v563t")
+browser = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2066366646]
+position = Vector2(9, -175)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_m8r5x")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=755213636]
+process_mode = 3
+position = Vector2(0, -220)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1106575680]
+position = Vector2(4, -49)
+shape = SubResource("RectangleShape2D_dpyoa")
+
+[node name="StateMachine" type="Node" parent="." unique_id=1025483507]
+script = ExtResource("4_r13sv")
+
+[node name="Browsing" type="Node" parent="StateMachine" unique_id=1043014858]
+script = ExtResource("5_hvt6j")
+dialogue_path = "uid://belg6mw1rp84r"
+state_timer_max = 15.0
+
+[node name="TotalTimer" type="Timer" parent="StateMachine/Browsing" unique_id=1637110439]
+
+[node name="Timer" type="Timer" parent="StateMachine/Browsing" unique_id=91867292]
+
+[node name="Stealing" type="Node" parent="StateMachine" unique_id=131838298]
+script = ExtResource("6_gne7t")
+
+[node name="CheckOut" type="Node" parent="StateMachine" unique_id=797621066]
+script = ExtResource("7_b4owr")
+dialogue_path = "uid://clgvbnosb5ip5"
+state_timer_max = 15.0
+
+[node name="TotalTimer" type="Timer" parent="StateMachine/CheckOut" unique_id=2115047814]
+
+[node name="Leaving" type="Node" parent="StateMachine" unique_id=1394474763]
+script = ExtResource("8_xolcs")
+state_timer_min = 5.0
+state_timer_max = 10.0
+
+[node name="TotalTimer" type="Timer" parent="StateMachine/Leaving" unique_id=847682575]
+
+[node name="Stats" type="Control" parent="." unique_id=126685864]
+material = SubResource("CanvasItemMaterial_20prf")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -182.0
+offset_top = -575.0
+offset_right = 53.0
+offset_bottom = -528.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Stats" unique_id=1043576444]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture1D_woxlu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Stats" unique_id=80229245]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="StateLabel" type="Label" parent="Stats/VBoxContainer" unique_id=585925971]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "STATE"
+
+[node name="RemainingTime" type="Control" parent="Stats" unique_id=1897608780]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 118.0
+offset_top = 20.0
+offset_right = -111.0
+offset_bottom = 29.0
+grow_horizontal = 2
+
+[node name="ProgressBar" type="ProgressBar" parent="Stats/RemainingTime" unique_id=1655960174]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -14.0
+offset_right = 8.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 50.0
+show_percentage = false
+
+[node name="Interact" type="Control" parent="." unique_id=1903375954]
+material = SubResource("CanvasItemMaterial_20prf")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -181.0
+offset_top = -533.0
+offset_right = 52.0
+offset_bottom = -275.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Interact" unique_id=2031769524]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -249.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_woxlu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Interact" unique_id=1230217410]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TalkButton" type="Button" parent="Interact/VBoxContainer" unique_id=2110545976]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "TALK"
+
+[node name="CartButton" type="Button" parent="Interact/VBoxContainer" unique_id=1084264752]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "PEEK AT CART"
+
+[node name="ShopliftButton" type="Button" parent="Interact/VBoxContainer" unique_id=441661714]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "INSPECT FOR SHOPLIFTING"
+
+[node name="DecisionEngineBasicCustomer" type="Node" parent="." unique_id=686383233]
+script = ExtResource("9_6t7l6")
+metadata/_custom_type_script = "uid://bwjchabklal1d"
+
+[node name="ProductCart" parent="." unique_id=361799052 instance=ExtResource("10_p6kt5")]
+
+[node name="StolenCart" parent="." unique_id=1436481536 instance=ExtResource("11_2heda")]
+
+[node name="StateIndicator" type="Control" parent="." unique_id=2124923656 node_paths=PackedStringArray("npc")]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -191.0
+offset_right = 40.0
+offset_bottom = -151.0
+script = SubResource("GDScript_hktl6")
+npc = NodePath("..")
+
+[node name="Browsing" type="Sprite2D" parent="StateIndicator" unique_id=1599754773]
+position = Vector2(6.9999948, -374.00003)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("12_771p3")
+
+[node name="CheckOut" type="Sprite2D" parent="StateIndicator" unique_id=1209368086]
+position = Vector2(6.9999948, -371)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("13_fqasq")
+
+[node name="Leaving" type="Sprite2D" parent="StateIndicator" unique_id=614359906]
+position = Vector2(6.9999948, -375)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("14_m7l68")
+
+[node name="Speechbox" parent="." unique_id=1214007734 instance=ExtResource("15_v563t")]
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="timeout" from="StateMachine/Browsing/TotalTimer" to="StateMachine/Browsing" method="_on_total_timer_timeout"]
+[connection signal="timeout" from="StateMachine/CheckOut/TotalTimer" to="StateMachine/CheckOut" method="_on_total_timer_timeout"]
+[connection signal="timeout" from="StateMachine/Leaving/TotalTimer" to="StateMachine/Leaving" method="_on_total_timer_timeout"]
+[connection signal="pressed" from="Interact/VBoxContainer/TalkButton" to="." method="_on_talk_button_pressed"]
+[connection signal="pressed" from="Interact/VBoxContainer/CartButton" to="." method="_on_cart_button_pressed"]
+[connection signal="pressed" from="Interact/VBoxContainer/ShopliftButton" to="." method="_on_shoplift_button_pressed"]

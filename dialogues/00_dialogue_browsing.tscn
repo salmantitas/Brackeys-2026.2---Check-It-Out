@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c6dh6vnvfnu07"]
+
+[ext_resource type="Script" uid="uid://qc62aas86b67" path="res://dialogues/dialogue.gd" id="1_1o73v"]
+[ext_resource type="PackedScene" uid="uid://dn0v3e7macvlu" path="res://dialogues/accuse_dialogue.tscn" id="2_l3uwd"]
+[ext_resource type="PackedScene" uid="uid://c0n3408koex5h" path="res://dialogues/00_dialogue_exit.tscn" id="2_n6572"]
+[ext_resource type="Script" uid="uid://bu0cpmpqh0278" path="res://dialogues/assist_dialogue.gd" id="2_pbo7k"]
+
+[node name="00InitialDialogue" type="Node" unique_id=939059488]
+script = ExtResource("1_1o73v")
+metadata/_custom_type_script = "uid://qc62aas86b67"
+
+[node name="AssistDialogue" type="Node" parent="." unique_id=405368990]
+script = ExtResource("2_pbo7k")
+current_dialogue = "Offer to Assist Customer"
+line = "I am looking for Product-A"
+executible = 1
+metadata/_custom_type_script = "uid://qc62aas86b67"
+
+[node name="Dialogue" type="Node" parent="AssistDialogue" unique_id=1777920582]
+script = ExtResource("1_1o73v")
+current_dialogue = "Yes, we have it!"
+line = "Awesome, thanks!"
+executible = 2
+metadata/_custom_type_script = "uid://qc62aas86b67"
+
+[node name="CancelDialogue" parent="AssistDialogue/Dialogue" unique_id=391777944 instance=ExtResource("2_n6572")]
+
+[node name="Dialogue2" type="Node" parent="AssistDialogue" unique_id=690329854]
+script = ExtResource("1_1o73v")
+current_dialogue = "Sorry, we don't have it!"
+line = "What do you mean? I can see that you do."
+executible = 7
+metadata/_custom_type_script = "uid://qc62aas86b67"
+
+[node name="CancelDialogue" parent="AssistDialogue/Dialogue2" unique_id=1240582905 instance=ExtResource("2_n6572")]
+
+[node name="CancelDialogue" parent="AssistDialogue" unique_id=1928749868 instance=ExtResource("2_n6572")]
+
+[node name="AccuseDialogue" parent="." unique_id=1000084984 instance=ExtResource("2_l3uwd")]
+
+[node name="CancelDialogue" parent="." unique_id=1772664086 instance=ExtResource("2_n6572")]

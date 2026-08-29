@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b66dnoxc0ktsd"]
+
+[ext_resource type="Script" uid="uid://qc62aas86b67" path="res://dialogues/dialogue.gd" id="1_nub5x"]
+[ext_resource type="PackedScene" uid="uid://c0n3408koex5h" path="res://dialogues/00_dialogue_exit.tscn" id="2_2bs3j"]
+[ext_resource type="PackedScene" uid="uid://dn0v3e7macvlu" path="res://dialogues/accuse_dialogue.tscn" id="2_nniha"]
+
+[node name="00DialogueLeaving" type="Node" unique_id=939059488]
+script = ExtResource("1_nub5x")
+metadata/_custom_type_script = "uid://qc62aas86b67"
+
+[node name="AccuseDialogue" parent="." unique_id=1000084984 instance=ExtResource("2_nniha")]
+
+[node name="CancelDialogue" parent="." unique_id=391777944 instance=ExtResource("2_2bs3j")]

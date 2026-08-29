@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dlermelsf5cg4"]
+
+[ext_resource type="Script" uid="uid://d0ff83stgrp0i" path="res://components/customer_spawner.gd" id="1_4pq3g"]
+
+[sub_resource type="Curve" id="Curve_tq5ur"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2022472, 0.499704), 0.0, 0.0, 0, 0, Vector2(0.39700374, 0.25340444), 0.0, 0.0, 0, 0, Vector2(0.49812737, 0.99230313), 0.0, 0.0, 0, 0, Vector2(0.65168536, 0.7306099), 0.0, 0.0, 0, 0, Vector2(0.7602997, 1), 0.0, 0.0, 0, 0, Vector2(0.90262175, 0.22261697), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 8
+
+[node name="CustomerSpawner" type="Node" unique_id=1312482105]
+script = ExtResource("1_4pq3g")
+rush = SubResource("Curve_tq5ur")
+
+[node name="Timer" type="Timer" parent="." unique_id=732389291]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

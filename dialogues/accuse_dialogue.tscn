@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dn0v3e7macvlu"]
+
+[ext_resource type="Script" uid="uid://qc62aas86b67" path="res://dialogues/dialogue.gd" id="1_wvobn"]
+[ext_resource type="PackedScene" uid="uid://c0n3408koex5h" path="res://dialogues/00_dialogue_exit.tscn" id="2_f707y"]
+
+[node name="AccuseDialogue" type="Node" unique_id=1000084984]
+script = ExtResource("1_wvobn")
+current_dialogue = "Accuse Customer of Theft"
+line = "What? How dare you?"
+max_visit_count = 1
+executible = 4
+metadata/_custom_type_script = "uid://qc62aas86b67"
+
+[node name="Dialogue" type="Node" parent="." unique_id=2097984628]
+script = ExtResource("1_wvobn")
+current_dialogue = "Check Bag"
+line = "*innocent* I am never coming back."
+executible = 5
+metadata/_custom_type_script = "uid://qc62aas86b67"
+
+[node name="CancelDialogue" parent="Dialogue" unique_id=391777944 instance=ExtResource("2_f707y")]
+
+[node name="Dialogue2" type="Node" parent="." unique_id=824162993]
+script = ExtResource("1_wvobn")
+current_dialogue = "Back Off"
+line = "That's what I thought"
+metadata/_custom_type_script = "uid://qc62aas86b67"
+
+[node name="CancelDialogue" parent="Dialogue2" unique_id=2018624737 instance=ExtResource("2_f707y")]

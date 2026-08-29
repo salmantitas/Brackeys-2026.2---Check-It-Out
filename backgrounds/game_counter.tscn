@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c3tbkindo7ih8"]
+
+[ext_resource type="Texture2D" uid="uid://3k42b3so33gs" path="res://assets/art/game_counter.webp" id="1_f7e3n"]
+[ext_resource type="Texture2D" uid="uid://dwn77uqskv1v" path="res://assets/art/game_counter_till.webp" id="2_a3tsn"]
+[ext_resource type="Script" uid="uid://bf3q78pvpwpjf" path="res://backgrounds/game_counter.gd" id="2_frng8"]
+[ext_resource type="Texture2D" uid="uid://dwimuqhnca8bx" path="res://assets/art/game_counter_phone.webp" id="3_evnun"]
+[ext_resource type="Texture2D" uid="uid://bubqwohwpc2lh" path="res://assets/art/game_counter_checkout.webp" id="4_eopvq"]
+
+[node name="GameCounter" type="Sprite2D" unique_id=2037230404]
+z_index = 1
+texture = ExtResource("1_f7e3n")
+script = ExtResource("2_frng8")
+
+[node name="GameCounterTill" type="Sprite2D" parent="." unique_id=1356163366]
+position = Vector2(-544, 188.00002)
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("2_a3tsn")
+
+[node name="GameCounterCheckout" type="Sprite2D" parent="." unique_id=313242814]
+position = Vector2(-545.5, 156)
+scale = Vector2(0.44, 0.44)
+texture = ExtResource("4_eopvq")
+
+[node name="GameCounterPhone" type="Sprite2D" parent="." unique_id=148763925]
+position = Vector2(594, 280)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_evnun")
