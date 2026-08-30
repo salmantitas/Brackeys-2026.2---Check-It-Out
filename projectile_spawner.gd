@@ -1,5 +1,6 @@
 extends Node2D
 
+var offset : Vector2 = Vector2(0, -100)
 var projectiles : Dictionary[Node2D, Vector2]
 @export var projectile_velocity : Vector2 = Vector2(10, 10)
 # Called when the node enters the scene tree for the first time.
@@ -43,7 +44,7 @@ func _on_product_taken(product_id : StoreManager.ProductType, npc : NPC) -> void
 	var projectile : Node2D = PRODUCT.instantiate()
 	add_child(projectile)
 	projectile.global_position = global_position + Vector2(randf_range(-10, 10), randf_range(-100, 100))
-	projectiles.get_or_add(projectile, npc.global_position)
+	projectiles.get_or_add(projectile, npc.global_position + offset)
 
 func _on_product_returned(product_id : StoreManager.ProductType, npc : NPC) -> void:
 	var PRODUCT : PackedScene
@@ -65,5 +66,5 @@ func _on_product_returned(product_id : StoreManager.ProductType, npc : NPC) -> v
 		
 	var projectile : Node2D = PRODUCT.instantiate()
 	add_child(projectile)
-	projectile.global_position = npc.global_position
+	projectile.global_position = npc.global_position + offset
 	projectiles.get_or_add(projectile, global_position)

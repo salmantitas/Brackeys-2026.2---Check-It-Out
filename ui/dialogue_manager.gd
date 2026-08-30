@@ -57,12 +57,12 @@ func set_dialogue(dialogue : Dialogue) -> void:
 	#$VBoxContainer.size = size
 	
 func _on_dialogue_selected(new_dialogue : Dialogue) -> void:
-	#if new_dialogue.get_child_count() == 0:
-		#_on_conversation_ended()
-		#return
-		
 	new_dialogue.setup()
 	set_dialogue(new_dialogue)
+	
+	if new_dialogue.get_child_count() == 0:
+		exit_conversation()
+		return
 
 func _on_conversation_ended() -> void:
 	for c in responses.get_children():
@@ -75,6 +75,7 @@ func _on_conversation_ended() -> void:
 	current_npc = null
 	
 	clear_responses()
+	return
 	#get_tree().paused = false
 
 func clear_responses() -> void:
@@ -86,6 +87,17 @@ func clear_responses() -> void:
 func _on_npc_left (npc : NPC) -> void:
 	if npc == current_npc:
 		_on_conversation_ended()
+
+func exit_conversation() -> void:
+	for c in responses.get_children():
+		if c is Button:
+			responses.remove_child(c)
+	$".".hide()
+	current_npc.fade_out_speechbox()
+	current_dialogue = null
+	current_npc = null
+	
+	clear_responses()
 
 func execute_dialogue() -> void:
 	if current_dialogue.executible == null:
@@ -125,11 +137,12 @@ func execute_dialogue() -> void:
 		if current_npc.products_stolen.size() > 0:
 			var dlg : Dialogue = current_dialogue.get_child(0)
 			dlg.line = "What!!! How did these show up in my bag?"
-		pass
+		else:
+			StoreManager.customers_lost += 1
 	
 	if current_dialogue.executible == Dialogue.Function.BAG_CHECK:
 		current_npc.check_bags()
 		DayNightCycleManager.time_skip(10)
 	
-	if current_dialogue.executible == Dialogue.Function.EXIT:
-		_on_conversation_ended()
+	#if current_dialogue.executible == Dialogue.Function.EXIT:
+		#_on_conversation_ended()

@@ -155,7 +155,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(853, 13), Vector2(853, 636)]
+"values": [Vector2(829, 13), Vector2(829, 636)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -167,7 +167,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(172.99976, 67), Vector2(172.99976, 67)]
+"values": [Vector2(213.00006, 67), Vector2(213.00006, 67)]
 }
 
 [sub_resource type="Animation" id="Animation_xtm2r"]
@@ -219,7 +219,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(853, 636), Vector2(853, 13)]
+"values": [Vector2(829, 636), Vector2(829, 13)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -231,7 +231,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(0, 0.1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(172.99976, 67), Vector2(172.99976, 67)]
+"values": [Vector2(213.00006, 67), Vector2(172.99976, 67)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kc1f2"]
@@ -506,12 +506,13 @@ unique_name_in_owner = true
 process_mode = 3
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.075789474
+anchor_left = -0.53105265
+anchor_top = -1.02
 anchor_right = -0.53105265
 anchor_bottom = -1.02
-offset_left = 726.0
-offset_top = 13.0
-offset_right = 2051.9998
+offset_left = 1879.0
+offset_top = 166.0
+offset_right = 2092.0
 offset_bottom = 233.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -525,12 +526,12 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_xtm2r")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_mlhsj")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_kc1f2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6mpex")
-text = "PAUSE"
+text = "UNPAUSE"
 
 [node name="Pause" type="Sprite2D" parent="Top/PauseButton" unique_id=1450005480]
 z_index = -1
-position = Vector2(87.90002, 34)
-scale = Vector2(0.13268077, 0.3)
+position = Vector2(105.00003, 34)
+scale = Vector2(0.16867469, 0.3)
 texture = ExtResource("15_xtm2r")
 
 [node name="Bottom" type="Control" parent="." unique_id=1950612301]

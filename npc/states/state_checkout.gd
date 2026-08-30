@@ -33,6 +33,7 @@ func can_enter() -> bool:
 func _on_total_timer_timeout() -> void:
 	total_timer.stop()
 	return_products()
+	StoreManager.customers_lost += 1
 	
 func return_products() -> void:
 	for product_id in npc.products_cart:

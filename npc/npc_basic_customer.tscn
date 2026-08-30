@@ -97,7 +97,7 @@ state_timer_max = 15.0
 
 [node name="Leaving" type="Node" parent="StateMachine" unique_id=1394474763]
 script = ExtResource("7_p70cs")
-state_timer_min = 5.0
+state_timer_min = 7.0
 state_timer_max = 10.0
 
 [node name="TotalTimer" type="Timer" parent="StateMachine/Leaving" unique_id=847682575]

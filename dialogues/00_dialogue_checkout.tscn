@@ -16,8 +16,6 @@ max_visit_count = 1
 executible = 3
 metadata/_custom_type_script = "uid://qc62aas86b67"
 
-[node name="CancelDialogue" parent="CheckoutDialogue" unique_id=621523012 instance=ExtResource("2_d2rvv")]
-
 [node name="AccuseDialogue" parent="." unique_id=1000084984 instance=ExtResource("3_oglkd")]
 
 [node name="CancelDialogue" parent="." unique_id=810069515 instance=ExtResource("2_d2rvv")]

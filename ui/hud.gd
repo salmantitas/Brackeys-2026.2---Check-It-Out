@@ -63,18 +63,18 @@ func _on_pause_button_pressed() -> void:
 	
 	if paused == true:
 		animation_player.play("unpause")
-		#pause_button.text = "PAUSE"
+		pause_button.text = "PAUSE"
 	else:
 		animation_player.play("pause")
-		#pause_button.text = "UNPAUSE"
+		pause_button.text = "UNPAUSE"
 		
 	get_tree().paused = !get_tree().paused
 
 func _on_inspection_started() -> void:
-	pause.hide()
+	pause_button.hide()
 
 func _on_inspection_ended() -> void:
-	pause.show()
+	pause_button.show()
 
 func _on_title_button_pressed() -> void:
 	get_tree().paused = false

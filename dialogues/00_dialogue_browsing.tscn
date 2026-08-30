@@ -23,18 +23,12 @@ line = "Awesome, thanks!"
 executible = 2
 metadata/_custom_type_script = "uid://qc62aas86b67"
 
-[node name="CancelDialogue" parent="AssistDialogue/Dialogue" unique_id=391777944 instance=ExtResource("2_n6572")]
-
 [node name="Dialogue2" type="Node" parent="AssistDialogue" unique_id=690329854]
 script = ExtResource("1_1o73v")
 current_dialogue = "Sorry, we don't have it!"
 line = "What do you mean? I can see that you do."
 executible = 7
 metadata/_custom_type_script = "uid://qc62aas86b67"
-
-[node name="CancelDialogue" parent="AssistDialogue/Dialogue2" unique_id=1240582905 instance=ExtResource("2_n6572")]
-
-[node name="CancelDialogue" parent="AssistDialogue" unique_id=1928749868 instance=ExtResource("2_n6572")]
 
 [node name="AccuseDialogue" parent="." unique_id=1000084984 instance=ExtResource("2_l3uwd")]
 

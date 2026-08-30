@@ -157,7 +157,9 @@ func buy_products() -> void:
 func check_bags() -> void:
 	if products_stolen.size() > 0:
 		Audio.play_spatial_sound(Audio.alarm, Vector2.ZERO)
-	
+	else:
+		StoreManager.customers_lost += 1
+		
 	for product_id in products_stolen:
 		StoreManager.return_product(product_id, self)
 		
@@ -190,3 +192,12 @@ func accused() -> void:
 	animated_sprite_2d.play("accused")
 	await get_tree().create_timer(1).timeout
 	animated_sprite_2d.play("default")
+
+func fade_out_speechbox(time : float = 1) -> void:
+	if speechbox.modulate.a == 0:
+		return
+		
+	var tween : Tween = get_tree().create_tween()
+	tween.tween_property(speechbox, "modulate", Color(1,1,1,0), time)
+	await tween.tween_callback(speechbox.hide)
+	speechbox.modulate = Color(1,1,1,1)

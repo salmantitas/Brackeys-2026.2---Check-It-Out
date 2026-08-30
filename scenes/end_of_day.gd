@@ -37,6 +37,7 @@ func _ready() -> void:
 	items_sold_label.text = str(StoreManager.items_sold)
 	theft_label.text = str(StoreManager.theft_count)
 	customers_gained_label.text = str(StoreManager.customers_gained)
+	customers_lost_label.text = str(StoreManager.customers_lost)
 	
 	loss_label.text = "- %.2f" % (StoreManager.product_lost)
 	dedn_label.text = loss_label.text

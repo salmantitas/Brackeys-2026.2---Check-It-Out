@@ -29,6 +29,9 @@ func enter() -> void:
 func re_enter() -> void: pass
 func exit() -> void: pass
 func physics_update( _delta : float ) -> void:
+	if total_timer.wait_time - total_timer.time_left <= 0.5:
+		return
+	
 	if npc.enraged:
 		npc.position += velocity * dir * 3
 	else:
@@ -47,7 +50,8 @@ func _on_total_timer_timeout() -> void:
 	npc.queue_free()
 
 func leave_immediately() -> void:
-	if total_timer.wait_time > 1:
+	var time : float = 2
+	if total_timer.wait_time > time:
 		total_timer.stop()
-		total_timer.wait_time = 1
+		total_timer.wait_time = time
 		total_timer.start()

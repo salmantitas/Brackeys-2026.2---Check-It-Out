@@ -15,8 +15,6 @@ line = "No, leave me alone!"
 max_visit_count = 1
 metadata/_custom_type_script = "uid://qc62aas86b67"
 
-[node name="CancelDialogue" parent="AssistDialogue" unique_id=391777944 instance=ExtResource("2_ja6b5")]
-
 [node name="AccuseDialogue" parent="." unique_id=1000084984 instance=ExtResource("3_j8rkw")]
 
 [node name="CancelDialogue" parent="." unique_id=1772664086 instance=ExtResource("2_ja6b5")]

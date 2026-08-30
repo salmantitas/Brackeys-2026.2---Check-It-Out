@@ -101,8 +101,8 @@ script = ExtResource("6_ngbl4")
 
 [node name="Leaving" type="Node" parent="StateMachine" unique_id=1394474763]
 script = ExtResource("7_f7rm5")
-state_timer_min = 5.0
-state_timer_max = 10.0
+state_timer_min = 4.0
+state_timer_max = 7.0
 
 [node name="TotalTimer" type="Timer" parent="StateMachine/Leaving" unique_id=847682575]
 
