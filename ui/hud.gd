@@ -77,4 +77,6 @@ func _on_inspection_ended() -> void:
 	pause.show()
 
 func _on_title_button_pressed() -> void:
+	get_tree().paused = false
 	SceneManager.return_to_title()
+	

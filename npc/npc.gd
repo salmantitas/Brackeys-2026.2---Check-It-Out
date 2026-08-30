@@ -15,7 +15,8 @@ var checkout_complete : bool = false
 
 @onready var speechbox: Control = $Speechbox
 @export var browser : bool = false
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
 @export var steal_chance : float = 0.0
 var enraged : float = 0.0
 
@@ -80,11 +81,11 @@ func setup() -> void:
 		set_physics_process(false)
 
 func randomize_appearance() -> void:	
-	var ref_sprite : Sprite2D = CharacterLibrary.get_sprite()
+	var ref_sprite : AnimatedSprite2D = CharacterLibrary.get_sprite()
 	
-	sprite_2d.texture = ref_sprite.texture
-	sprite_2d.position = ref_sprite.position
-	sprite_2d.scale = ref_sprite.scale
+	animated_sprite_2d.sprite_frames = ref_sprite.sprite_frames
+	animated_sprite_2d.position = ref_sprite.position
+	animated_sprite_2d.scale = ref_sprite.scale
 
 func randomize_voice() -> void:
 	var index : int = randi_range(0, Audio.voices_paths.size() - 1)
@@ -138,6 +139,10 @@ func add_to_cart() -> void:
 		StoreManager.take_product(desired_product)
 
 func add_to_pocket() -> void:
+	animated_sprite_2d.play("steal")
+	await get_tree().create_timer(0.5).timeout
+	animated_sprite_2d.play("default")
+	
 	generate_desired_product()
 	if StoreManager.has_product(desired_product):
 		products_stolen.append(desired_product)
@@ -175,3 +180,9 @@ func display_text(str : String) -> void:
 
 func generate_desired_product() -> void:
 	desired_product = StoreManager.ProductType.values().pick_random()
+
+func accused() -> void:
+	product_pick_interval *= 2
+	animated_sprite_2d.play("accused")
+	await get_tree().create_timer(1).timeout
+	animated_sprite_2d.play("default")

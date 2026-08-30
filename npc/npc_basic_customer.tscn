@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://cnuwgufa8yq6g"]
 
-[ext_resource type="Texture2D" uid="uid://cgklp7kh88vne" path="res://assets/characters/customer_1_1.png" id="1_20prf"]
 [ext_resource type="Texture2D" uid="uid://c7do81mqh7r2x" path="res://icon.svg" id="1_sspvn"]
 [ext_resource type="Script" uid="uid://c8lw8vrb3r72u" path="res://npc/npc.gd" id="2_pcwmf"]
 [ext_resource type="Script" uid="uid://x1n4h47ydq2e" path="res://npc/states/00_state.gd" id="3_dpyoa"]
@@ -62,10 +61,8 @@ func _process(delta: float) -> void:
 texture = ExtResource("1_sspvn")
 script = ExtResource("2_pcwmf")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2066366646]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=521965173]
 position = Vector2(9, -175)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_20prf")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=755213636]
 process_mode = 3

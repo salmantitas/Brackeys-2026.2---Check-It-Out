@@ -117,7 +117,7 @@ func execute_dialogue() -> void:
 		current_npc.buy_products()
 	
 	if current_dialogue.executible == Dialogue.Function.ACCUSED:
-		current_npc.product_pick_interval *= 2
+		current_npc.accused()
 		if current_npc.products_stolen.size() > 0:
 			var dlg : Dialogue = current_dialogue.get_child(0)
 			dlg.line = "What!!! How did these show up in my bag?"

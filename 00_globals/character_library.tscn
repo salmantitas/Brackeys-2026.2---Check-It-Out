@@ -3,22 +3,115 @@
 [ext_resource type="Script" uid="uid://qktlvjbwopy8" path="res://00_globals/character_library.gd" id="1_evp6k"]
 [ext_resource type="Texture2D" uid="uid://cgklp7kh88vne" path="res://assets/characters/customer_1_1.png" id="2_tbauw"]
 [ext_resource type="Texture2D" uid="uid://ebljpgvulbt2" path="res://assets/characters/customer_2_1.png" id="3_yd28p"]
+[ext_resource type="Texture2D" uid="uid://d24vwlxlf4x7c" path="res://assets/characters/customer_2_2.png" id="4_j1hdt"]
 [ext_resource type="Texture2D" uid="uid://h8k12o10gfg4" path="res://assets/characters/customer_3_1.png" id="4_yd28p"]
+[ext_resource type="Texture2D" uid="uid://d1pnhnpyvj1cn" path="res://assets/characters/customer_2_3.png" id="5_j1hdt"]
+[ext_resource type="Texture2D" uid="uid://d2qrutcd35tns" path="res://assets/characters/customer_3_2.png" id="6_0ytlg"]
+[ext_resource type="Texture2D" uid="uid://cxbgbogpmq8w2" path="res://assets/characters/customer_3_3.png" id="8_0ytlg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yd28p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tbauw")
+}],
+"loop": true,
+"name": &"accused",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tbauw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tbauw")
+}],
+"loop": true,
+"name": &"steal",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yyepy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_j1hdt")
+}],
+"loop": true,
+"name": &"accused",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_yd28p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_j1hdt")
+}],
+"loop": true,
+"name": &"steal",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3vxhf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_0ytlg")
+}],
+"loop": true,
+"name": &"accused",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_yd28p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_0ytlg")
+}],
+"loop": true,
+"name": &"steal",
+"speed": 5.0
+}]
 
 [node name="CharacterLibrary" type="Node2D" unique_id=1880117025]
 script = ExtResource("1_evp6k")
 
-[node name="Sprite" type="Sprite2D" parent="." unique_id=956002301]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1020522594]
+visible = false
 position = Vector2(9, -175)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_tbauw")
+sprite_frames = SubResource("SpriteFrames_yd28p")
+animation = &"steal"
+autoplay = "default"
 
-[node name="Sprite2" type="Sprite2D" parent="." unique_id=1385879994]
-position = Vector2(-14, -204.99998)
-scale = Vector2(0.14133753, 0.14133753)
-texture = ExtResource("3_yd28p")
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1021933604]
+visible = false
+position = Vector2(-13, -208.99998)
+scale = Vector2(0.141, 0.141)
+sprite_frames = SubResource("SpriteFrames_yyepy")
+animation = &"steal"
+autoplay = "default"
 
-[node name="Sprite3" type="Sprite2D" parent="." unique_id=879412897]
-position = Vector2(8.000002, -200.99998)
-scale = Vector2(0.15576655, 0.15576655)
-texture = ExtResource("4_yd28p")
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=146838327]
+position = Vector2(8, -201)
+scale = Vector2(0.156, 0.156)
+sprite_frames = SubResource("SpriteFrames_3vxhf")
+animation = &"steal"
+autoplay = "default"
