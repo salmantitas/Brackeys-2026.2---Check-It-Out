@@ -66,7 +66,7 @@ script = ExtResource("2_pcwmf")
 position = Vector2(9, -175)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=755213636]
-process_mode = 3
+process_mode = 1
 position = Vector2(0, -220)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1106575680]

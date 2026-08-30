@@ -68,7 +68,7 @@ steal_chance = 100.0
 position = Vector2(9, -175)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=755213636]
-process_mode = 3
+process_mode = 1
 position = Vector2(0, -139)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1106575680]
