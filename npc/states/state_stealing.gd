@@ -22,7 +22,7 @@ func physics_update( _delta : float ) -> void: pass
 
 func _on_timer_timeout() -> void:
 	npc.add_to_pocket()
-	timer.wait_time = randf_range(0.5, 3)
+	timer.wait_time = randf_range(2, 3)
 
 func can_enter() -> bool:
 	return total_timer.time_left > 0

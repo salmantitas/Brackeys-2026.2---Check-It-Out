@@ -5,6 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://c7j6l0mwdulid" path="res://assets/art/menu_button.webp" id="2_pyl7j"]
 [ext_resource type="AudioStream" uid="uid://7qcvmh5nhr1e" path="res://assets/audio/music/main_menu_grocery_jam.wav" id="2_wosw1"]
 
+[sub_resource type="Gradient" id="Gradient_pyl7j"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_b3w7a"]
+gradient = SubResource("Gradient_pyl7j")
+width = 1920
+
 [sub_resource type="Gradient" id="Gradient_b3w7a"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
 
@@ -140,6 +147,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=901499734]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("GradientTexture1D_b3w7a")
 
 [node name="CheckitoutMenu" type="Sprite2D" parent="Control" unique_id=1925878311]
 position = Vector2(972.00006, 544)

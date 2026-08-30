@@ -58,6 +58,7 @@ func _process(delta: float) -> void:
 "
 
 [node name="NPCBasicCustomer" type="Sprite2D" unique_id=456182731]
+self_modulate = Color(1, 1, 1, 0)
 texture = ExtResource("1_sspvn")
 script = ExtResource("2_pcwmf")
 

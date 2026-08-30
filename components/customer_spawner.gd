@@ -83,6 +83,7 @@ func spawn_npc(npc_scene : PackedScene) -> void:
 		print(spawn_position)
 	deadzone.append(spawn_position.x)
 	npc.global_position = Vector2(min_x + spawn_position.x * offset*2, spawn_position.y)
+	npc.initial_position = spawn_position.x
 	
 	Audio.play_spatial_sound(Audio.npc_enter, Vector2.ZERO)
 	add_child(npc)
@@ -90,7 +91,7 @@ func spawn_npc(npc_scene : PackedScene) -> void:
 	capacity -= 1
 
 func _clear_position( pos_x : float) -> void:
-	var deadzone_pos : float = (pos_x - min_x ) / (offset * 2) 
+	var deadzone_pos : float = pos_x
 	deadzone.erase(deadzone_pos)
 	capacity += 1
 

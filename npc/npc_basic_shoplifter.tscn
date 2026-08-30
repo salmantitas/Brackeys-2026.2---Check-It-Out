@@ -59,6 +59,7 @@ func _process(delta: float) -> void:
 "
 
 [node name="NPCBasicShoplifter" type="Sprite2D" unique_id=456182731]
+self_modulate = Color(1, 1, 1, 0)
 texture = ExtResource("1_jb8wl")
 script = ExtResource("2_0kdtg")
 steal_chance = 100.0

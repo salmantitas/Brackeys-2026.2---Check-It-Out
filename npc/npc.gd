@@ -1,6 +1,7 @@
 class_name NPC
 extends Sprite2D
 
+var initial_position : int = -1
 var dialogue : Dialogue
 
 var shopping_list : Inventory
@@ -140,7 +141,7 @@ func add_to_cart() -> void:
 
 func add_to_pocket() -> void:
 	animated_sprite_2d.play("steal")
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.1).timeout
 	animated_sprite_2d.play("default")
 	
 	generate_desired_product()

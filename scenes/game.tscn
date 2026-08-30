@@ -9,18 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://c3tbkindo7ih8" path="res://backgrounds/game_counter.tscn" id="7_u5sy4"]
 [ext_resource type="PackedScene" uid="uid://bj0ogkvqfvd7w" path="res://projectile_spawner.tscn" id="8_gee14"]
 
-[sub_resource type="Gradient" id="Gradient_8cj0n"]
+[sub_resource type="Gradient" id="Gradient_gee14"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_uwrxv"]
-gradient = SubResource("Gradient_8cj0n")
+gradient = SubResource("Gradient_gee14")
 
 [node name="Game" type="Node2D" unique_id=1634610352]
-
-[node name="Background" type="TextureRect" parent="." unique_id=2096426457]
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = SubResource("GradientTexture2D_uwrxv")
 
 [node name="GameBg" type="Sprite2D" parent="." unique_id=689617945]
 position = Vector2(967, 543)
@@ -45,3 +40,16 @@ position = Vector2(968, 541)
 
 [node name="ProjectileSpawner" parent="." unique_id=1924357652 instance=ExtResource("8_gee14")]
 position = Vector2(138, 310)
+
+[node name="Background" type="TextureRect" parent="." unique_id=2096426457]
+z_index = 1
+offset_right = 200.0
+offset_bottom = 1080.0
+texture = SubResource("GradientTexture2D_uwrxv")
+
+[node name="Background2" type="TextureRect" parent="." unique_id=889101798]
+z_index = 1
+offset_left = 1736.0
+offset_right = 1936.0
+offset_bottom = 1080.0
+texture = SubResource("GradientTexture2D_uwrxv")
