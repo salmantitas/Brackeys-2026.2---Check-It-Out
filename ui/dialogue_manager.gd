@@ -21,7 +21,7 @@ func _on_conversation_started(npc : NPC) -> void:
 	$".".show()
 	current_npc = npc
 	set_dialogue(current_npc.dialogue)
-	responses.alignment = BoxContainer.ALIGNMENT_CENTER
+	#responses.alignment = BoxContainer.ALIGNMENT_CENTER
 	#responses.size_flags_horizontal = Control.SIZE_FILL
 
 func set_dialogue(dialogue : Dialogue) -> void:
@@ -57,6 +57,10 @@ func set_dialogue(dialogue : Dialogue) -> void:
 	#$VBoxContainer.size = size
 	
 func _on_dialogue_selected(new_dialogue : Dialogue) -> void:
+	#if new_dialogue.get_child_count() == 0:
+		#_on_conversation_ended()
+		#return
+		
 	new_dialogue.setup()
 	set_dialogue(new_dialogue)
 

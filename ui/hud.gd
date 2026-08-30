@@ -63,10 +63,10 @@ func _on_pause_button_pressed() -> void:
 	
 	if paused == true:
 		animation_player.play("unpause")
-		pause_button.text = "PAUSE"
+		#pause_button.text = "PAUSE"
 	else:
 		animation_player.play("pause")
-		pause_button.text = "UNPAUSE"
+		#pause_button.text = "UNPAUSE"
 		
 	get_tree().paused = !get_tree().paused
 
