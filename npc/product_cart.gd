@@ -64,7 +64,7 @@ func process_product_cart_to_string(npc : NPC) -> void:
 	else:
 		meat_count.text = str(count)
 	
-	count = npc.products_cart.count(StoreManager.ProductType.Potato)
+	count = npc.products_cart.count(StoreManager.ProductType.Squid)
 	if npc.products_cart.count(count) == 0:
 		squid_count.text = str(count)#butter.hide()
 	else:

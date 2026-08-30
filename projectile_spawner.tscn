@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bj0ogkvqfvd7w"]
+
+[ext_resource type="Script" uid="uid://c0mr3fd6bxmgc" path="res://projectile_spawner.gd" id="1_riebp"]
+
+[node name="ProjectileSpawner" type="Node2D" unique_id=1924357652]
+script = ExtResource("1_riebp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=711510108]

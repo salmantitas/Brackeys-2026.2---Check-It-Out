@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c68cslj2sxh42"]
+
+[ext_resource type="Texture2D" uid="uid://dxv5rs01ofx7s" path="res://assets/art/product_butter.webp" id="1_3me2p"]
+
+[node name="ProductButter" type="Sprite2D" unique_id=864603600]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_3me2p")

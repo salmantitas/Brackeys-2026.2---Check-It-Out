@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cne2egskv7lkt"]
+
+[ext_resource type="Texture2D" uid="uid://xu7ltmtg4hac" path="res://assets/art/product_squid.webp" id="1_33de0"]
+
+[node name="ProductSquid" type="Sprite2D" unique_id=1861340809]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_33de0")

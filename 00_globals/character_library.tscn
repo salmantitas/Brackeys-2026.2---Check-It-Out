@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c8uypbrqwvoyg"]
 
 [ext_resource type="Script" uid="uid://qktlvjbwopy8" path="res://00_globals/character_library.gd" id="1_evp6k"]
+[ext_resource type="Texture2D" uid="uid://dua781873rut2" path="res://assets/characters/customer_1_2.webp" id="2_e4sbg"]
 [ext_resource type="Texture2D" uid="uid://cgklp7kh88vne" path="res://assets/characters/customer_1_1.png" id="2_tbauw"]
 [ext_resource type="Texture2D" uid="uid://ebljpgvulbt2" path="res://assets/characters/customer_2_1.png" id="3_yd28p"]
 [ext_resource type="Texture2D" uid="uid://d24vwlxlf4x7c" path="res://assets/characters/customer_2_2.png" id="4_j1hdt"]
@@ -9,11 +10,15 @@
 [ext_resource type="Texture2D" uid="uid://d2qrutcd35tns" path="res://assets/characters/customer_3_2.png" id="6_0ytlg"]
 [ext_resource type="Texture2D" uid="uid://cxbgbogpmq8w2" path="res://assets/characters/customer_3_3.png" id="8_0ytlg"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4sbg"]
+atlas = ExtResource("2_e4sbg")
+region = Rect2(120, 200, 590, 818)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_yd28p"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_tbauw")
+"texture": SubResource("AtlasTexture_e4sbg")
 }],
 "loop": true,
 "name": &"accused",
@@ -94,15 +99,13 @@ animations = [{
 script = ExtResource("1_evp6k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1020522594]
-visible = false
 position = Vector2(9, -175)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.55, 0.55)
 sprite_frames = SubResource("SpriteFrames_yd28p")
 animation = &"steal"
 autoplay = "default"
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1021933604]
-visible = false
 position = Vector2(-13, -208.99998)
 scale = Vector2(0.141, 0.141)
 sprite_frames = SubResource("SpriteFrames_yyepy")

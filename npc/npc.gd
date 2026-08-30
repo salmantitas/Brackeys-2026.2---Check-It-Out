@@ -136,7 +136,7 @@ func add_to_cart() -> void:
 	
 	if StoreManager.has_product(desired_product):
 		products_cart.append(desired_product)
-		StoreManager.take_product(desired_product)
+		StoreManager.take_product(desired_product, self)
 
 func add_to_pocket() -> void:
 	animated_sprite_2d.play("steal")
@@ -146,7 +146,7 @@ func add_to_pocket() -> void:
 	generate_desired_product()
 	if StoreManager.has_product(desired_product):
 		products_stolen.append(desired_product)
-		StoreManager.take_product(desired_product)
+		StoreManager.take_product(desired_product, self)
 
 func buy_products() -> void:
 	StoreManager.buy_products(products_cart)
@@ -158,7 +158,10 @@ func check_bags() -> void:
 		Audio.play_spatial_sound(Audio.alarm, Vector2.ZERO)
 	
 	for product_id in products_stolen:
-		StoreManager.return_product(product_id)
+		StoreManager.return_product(product_id, self)
+		
+	for product_id in products_cart:
+		StoreManager.return_product(product_id, self)
 	products_cart = []
 	products_stolen = []
 	enraged = 1.0

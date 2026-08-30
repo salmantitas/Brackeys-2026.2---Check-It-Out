@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bbjoxtx0fr7gq"]
+
+[ext_resource type="Texture2D" uid="uid://db7lg1fmt0taq" path="res://assets/art/product_tomato.webp" id="1_4bsrc"]
+
+[node name="ProductTomato" type="Sprite2D" unique_id=1337646418]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_4bsrc")

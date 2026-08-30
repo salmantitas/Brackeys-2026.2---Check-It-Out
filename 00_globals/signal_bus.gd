@@ -17,3 +17,9 @@ signal inspection_started()
 
 @warning_ignore("unused_signal")
 signal inspection_ended()
+
+@warning_ignore("unused_signal")
+signal product_taken(product_id : StoreManager.ProductType, npc: NPC)
+
+@warning_ignore("unused_signal")
+signal product_returned(product_id : StoreManager.ProductType, npc: NPC)

@@ -17,7 +17,7 @@ enum ProductType {
 	Bread,
 	Butter,
 	Dragonfruit,
-	Potato,
+	Squid,
 	Meat,
 	Tomato
 }
@@ -55,7 +55,7 @@ func restock_inventory() -> void:
 		ProductType.Butter : ["Butter", randi_range(10, 20), 9.95],
 		ProductType.Dragonfruit : ["Dragonfruit", randi_range(10, 20), 9.95],
 		ProductType.Meat : ["Meat", randi_range(10, 20), 9.95],
-		ProductType.Potato : ["Squid", randi_range(10, 20), 9.95],
+		ProductType.Squid : ["Squid", randi_range(10, 20), 9.95],
 		ProductType.Tomato : ["Tomato", randi_range(10, 20), 9.95],
 	}
 	
@@ -69,7 +69,7 @@ func restock_inventory_test() -> void:
 		ProductType.Butter : ["Butter", 0, 9.95],
 		ProductType.Dragonfruit : ["Dragonfruit", 0, 9.95],
 		ProductType.Meat : ["Meat", 0, 9.95],
-		ProductType.Potato : ["Squid", 0, 9.95],
+		ProductType.Squid : ["Squid", 0, 9.95],
 		ProductType.Tomato : ["Tomato", 0, 9.95],
 	}
 	
@@ -94,19 +94,21 @@ func has_product(product_id : ProductType) -> bool:
 	var product_qty : int = product_info[1]
 	return product_qty > 0
 
-func take_product(product_id : ProductType) -> void:
+func take_product(product_id : ProductType, npc : NPC) -> void:
 	var product_info : Array = StoreManager.inventory[product_id]
 	var new_product_info : Array = [product_info[0], product_info[1] - 1, product_info[2]]
 	inventory[product_id] = new_product_info
 	total_stock -= 1
 	stock_changed.emit()
-
-func return_product(product_id : ProductType) -> void:
+	SignalBus.product_taken.emit(product_id, npc)
+	
+func return_product(product_id : ProductType, npc : NPC) -> void:
 	var product_info : Array = StoreManager.inventory[product_id]
 	var new_product_info : Array = [product_info[0], product_info[1] + 1, product_info[2]]
 	StoreManager.inventory[product_id] = new_product_info
 	StoreManager.total_stock += 1
 	stock_changed.emit()
+	SignalBus.product_returned.emit(product_id, npc)
 
 func steal_products(products : Array[ProductType]) -> void:
 	print("Product Stolen")

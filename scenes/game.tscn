@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://b6xnvefhcot7f" path="res://music_auto_trigger.gd" id="4_lbhrr"]
 [ext_resource type="AudioStream" uid="uid://txdr427xskld" path="res://assets/audio/music/gameplay_music_apple_rush.wav" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://c3tbkindo7ih8" path="res://backgrounds/game_counter.tscn" id="7_u5sy4"]
+[ext_resource type="PackedScene" uid="uid://bj0ogkvqfvd7w" path="res://projectile_spawner.tscn" id="8_gee14"]
 
 [sub_resource type="Gradient" id="Gradient_8cj0n"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
@@ -41,3 +42,6 @@ metadata/_custom_type_script = "uid://b6xnvefhcot7f"
 
 [node name="GameCounter" parent="." unique_id=2037230404 instance=ExtResource("7_u5sy4")]
 position = Vector2(968, 541)
+
+[node name="ProjectileSpawner" parent="." unique_id=1924357652 instance=ExtResource("8_gee14")]
+position = Vector2(138, 310)

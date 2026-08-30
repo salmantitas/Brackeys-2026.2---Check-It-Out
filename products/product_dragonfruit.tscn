@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://otimqgipnnhl"]
+
+[ext_resource type="Texture2D" uid="uid://8hyxpfucmq7u" path="res://assets/art/product_dragonfruit.webp" id="1_35qlm"]
+
+[node name="ProductDragonfruit" type="Node2D" unique_id=730641454]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=888562719]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_35qlm")

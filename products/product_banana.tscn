@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cdsx8h1ubomlr"]
+
+[ext_resource type="Texture2D" uid="uid://1tdyq85tvdpl" path="res://assets/art/product_banana.webp" id="1_aflwp"]
+
+[node name="ProductBanana" type="Sprite2D" unique_id=1076442063]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_aflwp")

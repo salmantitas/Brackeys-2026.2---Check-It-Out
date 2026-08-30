@@ -36,5 +36,5 @@ func _on_total_timer_timeout() -> void:
 	
 func return_products() -> void:
 	for product_id in npc.products_cart:
-		StoreManager.return_product(product_id)
+		StoreManager.return_product(product_id, npc)
 	npc.products_cart = []

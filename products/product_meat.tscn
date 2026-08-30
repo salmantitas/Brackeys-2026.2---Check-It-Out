@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://blb2xn7rvl1kx"]
+
+[ext_resource type="Texture2D" uid="uid://cfklpxyfcjmu2" path="res://assets/art/product_meat.webp" id="1_a1e4p"]
+
+[node name="ProductMeat" type="Sprite2D" unique_id=2097596373]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_a1e4p")

@@ -5,13 +5,13 @@
 [ext_resource type="Script" uid="uid://bf3q78pvpwpjf" path="res://backgrounds/game_counter.gd" id="2_frng8"]
 [ext_resource type="Texture2D" uid="uid://dwimuqhnca8bx" path="res://assets/art/game_counter_phone.webp" id="3_evnun"]
 [ext_resource type="Texture2D" uid="uid://bubqwohwpc2lh" path="res://assets/art/game_counter_checkout.webp" id="4_eopvq"]
-[ext_resource type="Texture2D" uid="uid://8hyxpfucmq7u" path="res://assets/art/product_dragonfruit.webp" id="6_jyd1j"]
-[ext_resource type="Texture2D" uid="uid://1tdyq85tvdpl" path="res://assets/art/product_banana.webp" id="7_qdt4m"]
-[ext_resource type="Texture2D" uid="uid://dxv5rs01ofx7s" path="res://assets/art/product_butter.webp" id="8_2iuij"]
-[ext_resource type="Texture2D" uid="uid://db7lg1fmt0taq" path="res://assets/art/product_tomato.webp" id="9_ngn18"]
-[ext_resource type="Texture2D" uid="uid://xu7ltmtg4hac" path="res://assets/art/product_squid.webp" id="10_55qkw"]
-[ext_resource type="Texture2D" uid="uid://dltqx0s5e2m1i" path="res://assets/art/product_bread.webp" id="11_ycrww"]
-[ext_resource type="Texture2D" uid="uid://cfklpxyfcjmu2" path="res://assets/art/product_meat.webp" id="12_bmhwo"]
+[ext_resource type="PackedScene" uid="uid://otimqgipnnhl" path="res://products/product_dragonfruit.tscn" id="6_jyd1j"]
+[ext_resource type="PackedScene" uid="uid://cdsx8h1ubomlr" path="res://products/product_banana.tscn" id="7_jyd1j"]
+[ext_resource type="PackedScene" uid="uid://c68cslj2sxh42" path="res://products/product_butter.tscn" id="8_qdt4m"]
+[ext_resource type="PackedScene" uid="uid://bbjoxtx0fr7gq" path="res://products/product_tomato.tscn" id="9_jyd1j"]
+[ext_resource type="PackedScene" uid="uid://cne2egskv7lkt" path="res://products/product_squid.tscn" id="10_qdt4m"]
+[ext_resource type="PackedScene" uid="uid://bw71ktv7mbopi" path="res://products/product_bread.tscn" id="11_2iuij"]
+[ext_resource type="PackedScene" uid="uid://blb2xn7rvl1kx" path="res://products/product_meat.tscn" id="12_ngn18"]
 
 [node name="GameCounter" type="Sprite2D" unique_id=2037230404]
 z_index = 1
@@ -35,37 +35,23 @@ texture = ExtResource("3_evnun")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=2007352957]
 
-[node name="ProductDragonfruit" type="Sprite2D" parent="Node2D" unique_id=1164840647]
+[node name="ProductDragonfruit" parent="Node2D" unique_id=888562719 instance=ExtResource("6_jyd1j")]
 position = Vector2(-27, 166)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_jyd1j")
 
-[node name="ProductBanana" type="Sprite2D" parent="Node2D" unique_id=1639148311]
+[node name="ProductBanana" parent="Node2D" unique_id=1076442063 instance=ExtResource("7_jyd1j")]
 position = Vector2(-105, 218)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_qdt4m")
 
-[node name="ProductBanana2" type="Sprite2D" parent="Node2D" unique_id=1023298248]
+[node name="ProductButter" parent="Node2D" unique_id=864603600 instance=ExtResource("8_qdt4m")]
 position = Vector2(-110.00001, 254)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("8_2iuij")
 
-[node name="ProductBanana3" type="Sprite2D" parent="Node2D" unique_id=1491120464]
+[node name="ProductTomato" parent="Node2D" unique_id=1337646418 instance=ExtResource("9_jyd1j")]
 position = Vector2(-84, 289)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("9_ngn18")
 
-[node name="ProductBanana4" type="Sprite2D" parent="Node2D" unique_id=118029640]
+[node name="ProductSquid" parent="Node2D" unique_id=1861340809 instance=ExtResource("10_qdt4m")]
 position = Vector2(-21, 231)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("10_55qkw")
 
-[node name="ProductBanana5" type="Sprite2D" parent="Node2D" unique_id=1383765533]
+[node name="ProductBread" parent="Node2D" unique_id=367288956 instance=ExtResource("11_2iuij")]
 position = Vector2(81, 207)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("11_ycrww")
 
-[node name="ProductBanana6" type="Sprite2D" parent="Node2D" unique_id=1844795725]
+[node name="ProductMeat" parent="Node2D" unique_id=2097596373 instance=ExtResource("12_ngn18")]
 position = Vector2(37, 279)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("12_bmhwo")

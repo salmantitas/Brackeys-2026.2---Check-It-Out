@@ -57,7 +57,7 @@ func display_stolen_products(npc : NPC) -> void:
 	else:
 		dragonfruit_sprite.hide()
 	
-	count = npc.products_stolen.count(StoreManager.ProductType.Potato)
+	count = npc.products_stolen.count(StoreManager.ProductType.Squid)
 	
 	if count > 0:
 		squid_sprite.show()

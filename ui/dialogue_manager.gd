@@ -104,13 +104,13 @@ func execute_dialogue() -> void:
 	if current_dialogue.executible == Dialogue.Function.PRODUCT_CHECK_YES:
 		if StoreManager.has_product(current_npc.desired_product):
 			current_npc.products_cart.append(current_npc.desired_product)
-			StoreManager.take_product(current_npc.desired_product)
+			StoreManager.take_product(current_npc.desired_product, current_npc)
 		current_npc.assisted = true
 		
 	if current_dialogue.executible == Dialogue.Function.PRODUCT_CHECK_NO:
 		if StoreManager.has_product(current_npc.desired_product):
 			current_npc.products_cart.append(current_npc.desired_product)
-			StoreManager.take_product(current_npc.desired_product)
+			StoreManager.take_product(current_npc.desired_product, current_npc)
 		current_npc.assisted = true
 
 	if current_dialogue.executible == Dialogue.Function.CHECKOUT:
